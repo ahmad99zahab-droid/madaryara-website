@@ -14,13 +14,45 @@ const translations = {
       toggleLabel: 'Menü',
       themeAria: 'Hell-/Dunkelmodus umschalten'
     },
+    katalog: {
+            tag: "Gesamter Katalog",
+            title: "Alle Labor-Geräte <span>auf einen Blick</span>",
+            sub: "Über 86 Mess- und Laborgeräte führender Marken – sortiert nach Gerätetyp, nicht nach Hersteller. Alle Produkte sind zertifiziert und auf Anfrage sofort lieferbar. Jede Kategorie lässt sich seitwärts durchscrollen.",
+            categoryBadge: "Kategorie",
+            modelsUnit: "Modelle",
+      searchPlaceholder: "Gerät suchen, z. B. „pH“, „Mikroskop“, „Thermomac“ …",
+      searchAria: "Katalog durchsuchen",
+      clearAria: "Suche löschen",
+            cat: { consumables: { title: "Verbrauchsmaterial &amp; Chemikalien", count: "2 Kategorien" }, microscopes: "Mikroskope", water: "pH, Leitfähigkeit & Wasseranalyse", refractometers: "Refraktometer", ovens: "Trockenschränke, Öfen & Wasserbäder", stirrers: "Rührer & Heizpilze", spectrometers: "Spektrometer, Thermometer & Zubehör" }
+    },
+    markenstreifen: {
+            tag: "Unsere Marken",
+      title: "Marken, <span>denen wir vertrauen</span>",
+      sub: "Klicken Sie auf eine Marke, um alle verfügbaren Geräte mit Foto anzusehen."
+    },
+    brandintro: {
+            optika: "Italienischer Hersteller von Mikroskopen für Labor, Bildung und industrielle Qualitätskontrolle.",
+      thermomac: "Türkischer Hersteller von Laborgeräten – Trockenschränke, Rührer, Wasserbäder und Inkubatoren.",
+      milwaukee: "US-Hersteller von pH-, Leitfähigkeits- und Sauerstoffmessgeräten für Wasseranalyse.",
+      atago: "Japanischer Hersteller hochpräziser Refraktometer für Labor, Lebensmittel und Industrie."
+    },
+    brandcard: {
+            borox: { subtitle: "Laborglas &amp; Verbrauchsmaterial", desc: "Türkischer Hersteller von Laborglas und Filtrationszubehör – Büchnertrichter, Vakuum-Filtrationssets, Filterpapier, Stopfen und Spritzflaschen für den täglichen Laborbedarf." },
+      kimyalab: { subtitle: "Laborchemikalien", desc: "Hochreine Laborchemikalien für Forschung, Lehre und Qualitätskontrolle – Säuren, Salze, Indikatoren und Reagenzien in verschiedenen Gebindegrößen." }
+    },
     hero: {
       badge: 'Professioneller Gerätehandel &amp; Export',
       title: 'Präzise Messtechnik<br/><span>für Wasseranalyse</span>',
       desc: 'Wir exportieren und handeln mit hochwertigen Analyse- und Messgeräten weltweit. Von Photometern bis Labor-Trockenschränken – alles aus einer Hand, schnell und zuverlässig.',
       btnPrimary: 'Produkte entdecken',
       btnOutline: 'Kontakt aufnehmen',
-      floatBadge: 'Schnell lieferbar'
+      floatBadge: 'Schnell lieferbar',
+      float1: "Trockenschrank fürs Labor",
+      float2: "Mikroskop für Biologie",
+      chipBorox: "Borox · Laborglas",
+      float3: "Photometer für Wasseranalyse",
+      float4: "pH-/EC-/TDS-Messgerät",
+      chipKimyalab: "Kimyalab · Chemikalien"
     },
     stats: {
       label1: 'Exportierte Geräte',
@@ -36,7 +68,7 @@ const translations = {
       available: 'Verfügbar'
     },
     product: { datasheet: '📄 Datenblatt herunterladen', moreDetails: 'Mehr Details', lessDetails: 'Weniger Details' },
-    shared: { protectionKey: 'Schutzklasse', requestBtn: 'Nachricht senden', questionBtn: 'Frage stellen', addToCart: 'In den Warenkorb' },
+    shared: { protectionKey: 'Schutzklasse', requestBtn: 'Nachricht senden', questionBtn: 'Frage stellen', addToCart: 'In den Warenkorb' , viewAll: "Alle", viewAllSuffix: "Geräte ansehen"},
     cart: {
       fabAria: 'Warenkorb öffnen',
       title: 'Warenkorb',
@@ -320,6 +352,12 @@ const translations = {
       emailPlaceholder: 'ihre@email.com',
       interest: 'Produkt / Interesse',
       selectPlaceholder: 'Bitte wählen …',
+      optionFDO: "FDO® Sensor",
+      optionLumiso: "LUMISO Expert Photometer",
+      optionOptika: "Optika – Mikroskope",
+      optionMilwaukee: "Milwaukee – pH, Leitfähigkeit &amp; Wasseranalyse",
+      optionAtago: "Atago – Refraktometer",
+      optionThermomac: "Thermomac – Trockenschränke, Öfen &amp; Rührer",
       optionBoth: 'Mehrere Produkte',
       optionGeneral: 'Allgemeine Nachricht',
       message: 'Ihre Nachricht',
@@ -377,13 +415,45 @@ const translations = {
       toggleLabel: 'Menu',
       themeAria: 'Toggle light/dark mode'
     },
+    katalog: {
+            tag: "Full Catalog",
+            title: "All Lab Equipment <span>at a Glance</span>",
+            sub: "Over 86 measurement and lab devices from leading brands – sorted by device type, not by manufacturer. All products are certified and available on request. Each category can be scrolled sideways.",
+            categoryBadge: "Category",
+            modelsUnit: "Models",
+      searchPlaceholder: "Search device, e.g. \"pH\", \"microscope\", \"Thermomac\" …",
+      searchAria: "Search catalog",
+      clearAria: "Clear search",
+            cat: { consumables: { title: "Consumables &amp; Chemicals", count: "2 Categories" }, microscopes: "Microscopes", water: "pH, Conductivity & Water Analysis", refractometers: "Refractometers", ovens: "Drying Ovens, Furnaces & Water Baths", stirrers: "Stirrers & Heating Mantles", spectrometers: "Spectrometers, Thermometers & Accessories" }
+    },
+    markenstreifen: {
+            tag: "Our Brands",
+      title: "Brands <span>We Trust</span>",
+      sub: "Click on a brand to see all available devices with photos."
+    },
+    brandintro: {
+            optika: "Italian manufacturer of microscopes for laboratory, education and industrial quality control.",
+      thermomac: "Turkish manufacturer of laboratory equipment – drying ovens, stirrers, water baths and incubators.",
+      milwaukee: "US manufacturer of pH, conductivity and oxygen meters for water analysis.",
+      atago: "Japanese manufacturer of high-precision refractometers for laboratory, food and industrial use."
+    },
+    brandcard: {
+            borox: { subtitle: "Lab Glassware &amp; Consumables", desc: "Turkish manufacturer of lab glassware and filtration accessories – Büchner funnels, vacuum filtration sets, filter paper, stoppers and wash bottles for everyday lab needs." },
+      kimyalab: { subtitle: "Laboratory Chemicals", desc: "High-purity laboratory chemicals for research, education and quality control – acids, salts, indicators and reagents in various pack sizes." }
+    },
     hero: {
       badge: 'Professional Equipment Trading &amp; Export',
       title: 'Precision Measurement<br/><span>for Water Analysis</span>',
       desc: 'We export and trade high-quality analysis and measurement devices worldwide. From photometers to laboratory drying ovens – everything from a single source, fast and reliable.',
       btnPrimary: 'Discover Products',
       btnOutline: 'Get in Touch',
-      floatBadge: 'Fast delivery'
+      floatBadge: 'Fast delivery',
+      float1: "Drying oven for the lab",
+      float2: "Microscope for biology",
+      chipBorox: "Borox · Lab glassware",
+      float3: "Photometer for water analysis",
+      float4: "pH/EC/TDS meter",
+      chipKimyalab: "Kimyalab · Chemicals"
     },
     stats: {
       label1: 'Devices Exported',
@@ -399,7 +469,7 @@ const translations = {
       available: 'Available'
     },
     product: { datasheet: '📄 Download Datasheet', moreDetails: 'More Details', lessDetails: 'Less Details' },
-    shared: { protectionKey: 'Protection Class', requestBtn: 'Send Message', questionBtn: 'Ask a Question', addToCart: 'Add to Cart' },
+    shared: { protectionKey: 'Protection Class', requestBtn: 'Send Message', questionBtn: 'Ask a Question', addToCart: 'Add to Cart' , viewAll: "All", viewAllSuffix: "Devices"},
     cart: {
       fabAria: 'Open cart',
       title: 'Cart',
@@ -683,6 +753,12 @@ const translations = {
       emailPlaceholder: 'your@email.com',
       interest: 'Product / Interest',
       selectPlaceholder: 'Please select …',
+      optionFDO: "FDO® Sensor",
+      optionLumiso: "LUMISO Expert Photometer",
+      optionOptika: "Optika – Microscopes",
+      optionMilwaukee: "Milwaukee – pH, Conductivity &amp; Water Analysis",
+      optionAtago: "Atago – Refractometers",
+      optionThermomac: "Thermomac – Drying Ovens, Furnaces &amp; Stirrers",
       optionBoth: 'Multiple Products',
       optionGeneral: 'General Message',
       message: 'Your Message',
@@ -740,13 +816,45 @@ const translations = {
       toggleLabel: 'القائمة',
       themeAria: 'تبديل الوضع الفاتح/الداكن'
     },
+    katalog: {
+            tag: "الكتالوج الكامل",
+            title: "جميع أجهزة المختبر <span>في نظرة واحدة</span>",
+            sub: "أكثر من 86 جهاز قياس ومختبر من ماركات رائدة – مرتبة حسب نوع الجهاز، لا حسب الشركة المصنعة. جميع المنتجات معتمدة ومتوفرة عند الطلب. يمكن التمرير أفقيًا في كل فئة.",
+            categoryBadge: "فئة",
+            modelsUnit: "موديلات",
+      searchPlaceholder: "ابحث عن جهاز، مثل \"pH\"، \"ميكروسكوب\"، \"Thermomac\" …",
+      searchAria: "البحث في الكتالوج",
+      clearAria: "مسح البحث",
+            cat: { consumables: { title: "المستلزمات والمواد الكيميائية", count: "فئتان" }, microscopes: "الميكروسكوبات", water: "pH، الموصلية وتحليل المياه", refractometers: "مقاييس الانكسار", ovens: "أفران التجفيف والأفران وحمامات الماء", stirrers: "الخلاطات وأغلفة التسخين", spectrometers: "أجهزة القياس الطيفي والترمومترات والملحقات" }
+    },
+    markenstreifen: {
+            tag: "ماركاتنا",
+      title: "ماركات <span>نثق بها</span>",
+      sub: "اضغط على ماركة لعرض جميع الأجهزة المتوفرة مع الصور."
+    },
+    brandintro: {
+            optika: "شركة إيطالية مصنعة للميكروسكوبات للمختبرات والتعليم ومراقبة الجودة الصناعية.",
+      thermomac: "شركة تركية مصنعة لمعدات المختبرات – أفران تجفيف، خلاطات، حمامات مائية وحاضنات.",
+      milwaukee: "شركة أمريكية مصنعة لأجهزة قياس pH والموصلية والأكسجين لتحليل المياه.",
+      atago: "شركة يابانية مصنعة لمقاييس الانكسار عالية الدقة للمختبرات والأغذية والصناعة."
+    },
+    brandcard: {
+            borox: { subtitle: "زجاجيات المختبر والمستلزمات", desc: "شركة تركية مصنعة لزجاجيات المختبر ومستلزمات الترشيح – قمعات بوخنر، أطقم ترشيح بالتفريغ، ورق ترشيح، سدادات وقطارات غسل للاستخدام المختبري اليومي." },
+      kimyalab: { subtitle: "كيماويات مختبرية", desc: "كيماويات مختبرية عالية النقاء للبحث والتعليم ومراقبة الجودة – أحماض وأملاح وكواشف ومؤشرات بأحجام تعبئة مختلفة." }
+    },
     hero: {
       badge: 'تجارة وتصدير معدات احترافية',
       title: 'تقنية قياس دقيقة<br/><span>لتحليل المياه</span>',
       desc: 'نقوم بتصدير وتجارة أجهزة تحليل وقياس عالية الجودة في جميع أنحاء العالم. من أجهزة قياس الضوء إلى أفران التجفيف المعملية – كل ما تحتاجه من مصدر واحد، بسرعة وموثوقية.',
       btnPrimary: 'تصفح المنتجات',
       btnOutline: 'تواصل معنا',
-      floatBadge: 'توصيل سريع'
+      floatBadge: 'توصيل سريع',
+      float1: "فرن تجفيف للمختبر",
+      float2: "ميكروسكوب للبيولوجيا",
+      chipBorox: "Borox · زجاجيات المختبر",
+      float3: "مقياس ضوئي لتحليل المياه",
+      float4: "جهاز قياس pH/EC/TDS",
+      chipKimyalab: "Kimyalab · كيماويات"
     },
     stats: {
       label1: 'جهاز تم تصديره',
@@ -762,7 +870,7 @@ const translations = {
       available: 'متوفر'
     },
     product: { datasheet: '📄 تنزيل ورقة البيانات', moreDetails: 'مزيد من التفاصيل', lessDetails: 'تفاصيل أقل' },
-    shared: { protectionKey: 'درجة الحماية', requestBtn: 'إرسال رسالة', questionBtn: 'اطرح سؤالاً', addToCart: 'أضف إلى السلة' },
+    shared: { protectionKey: 'درجة الحماية', requestBtn: 'إرسال رسالة', questionBtn: 'اطرح سؤالاً', addToCart: 'أضف إلى السلة' , viewAll: "جميع", viewAllSuffix: "أجهزة"},
     cart: {
       fabAria: 'فتح سلة التسوق',
       title: 'سلة التسوق',
@@ -1046,6 +1154,12 @@ const translations = {
       emailPlaceholder: 'your@email.com',
       interest: 'المنتج / الاهتمام',
       selectPlaceholder: 'يرجى الاختيار …',
+      optionFDO: "حساس FDO®",
+      optionLumiso: "مقياس ضوئي LUMISO Expert",
+      optionOptika: "Optika – ميكروسكوبات",
+      optionMilwaukee: "Milwaukee – pH، الموصلية وتحليل المياه",
+      optionAtago: "Atago – مقاييس الانكسار",
+      optionThermomac: "Thermomac – أفران تجفيف، أفران وخلاطات",
       optionBoth: 'منتجات متعددة',
       optionGeneral: 'رسالة عامة',
       message: 'رسالتك',
