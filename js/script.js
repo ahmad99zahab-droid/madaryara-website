@@ -150,6 +150,17 @@ document.querySelectorAll('.product-toggle').forEach(btn => {
   });
 });
 
+// Re-sync "more/less details" labels on language switch, since their text is
+// set dynamically above and not via data-i18n (which would ignore the toggle state).
+document.addEventListener('i18n:change', () => {
+  if (!window.i18n) return;
+  document.querySelectorAll('.product-toggle').forEach(btn => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const label = btn.querySelector('span');
+    if (label) label.textContent = window.i18n.t(expanded ? 'product.lessDetails' : 'product.moreDetails');
+  });
+});
+
 // Brand catalog table toggle
 document.querySelectorAll('.catalog-toggle').forEach(btn => {
   btn.addEventListener('click', () => {
