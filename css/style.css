@@ -2253,6 +2253,18 @@ html[dir="rtl"] .form-group select {
   box-shadow: 0 6px 16px rgba(var(--accent-rgb),0.4);
 }
 
+.brand-page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.brand-page-topbar .back-link { margin-bottom: 0; }
+.brand-page-topbar .lang-switch { margin-left: 0; }
+
 /* ── BRAND PAGE (dedicated per-brand catalog page) ── */
 .brand-page {
   max-width: 1100px;

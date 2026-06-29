@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +14,20 @@
   <div class="bg-water" aria-hidden="true"></div>
 
   <main class="brand-page">
-    <a class="back-link" href="index.html#markenstreifen">← Zurück zur Startseite</a>
+    <div class="brand-page-topbar">
+      <a class="back-link" href="index.html#markenstreifen" data-i18n="brandpage.backLink">← Zurück zur Startseite</a>
+    <div class="lang-switch">
+      <button data-lang="de">DE</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ar">AR</button>
+    </div>
+    </div>
 
     <div class="brand-page-head">
       <span class="brand-logo-card"><img class="brand-page-logo" src="images/logo-az-instrument.png" alt="AZ Instrument Logo" loading="lazy" /></span>
       <div>
         <h1>AZ Instrument</h1>
-        <p>Tragbare Mess- und Prüfgeräte · 5 Geräte</p>
+        <p data-i18n="brandpage.subtitle.azinstrument">Tragbare Mess- und Prüfgeräte · 5 Geräte</p>
       </div>
     </div>
 
@@ -28,61 +35,61 @@
         <div class="mini-item-card" data-reveal data-product="AZ 830P">
           <img src="images/catalog/az-instrument/az_01.jpg" alt="AZ 830P" loading="lazy" width="160" height="160" />
           <span>AZ 830P</span>
-          <p>Tragbares Mehrparameter-Messgerät für Feld- und Labormessungen.</p>
+          <p data-i18n="devicedesc.azinstrument.d1">Tragbares Mehrparameter-Messgerät für Feld- und Labormessungen.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 3.930 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="AZ 830P" data-price="3930"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 833PAZ">
           <img src="images/catalog/az-instrument/az_02.jpg" alt="AZ 833PAZ" loading="lazy" width="160" height="160" />
           <span>AZ 833PAZ</span>
-          <p>Kompaktes Wasseranalyse-Messgerät für den mobilen Einsatz.</p>
+          <p data-i18n="devicedesc.azinstrument.d2">Kompaktes Wasseranalyse-Messgerät für den mobilen Einsatz.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 3.700 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="AZ 833PAZ" data-price="3700"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 88161">
           <img src="images/catalog/az-instrument/az_03.jpg" alt="AZ 88161" loading="lazy" width="160" height="160" />
           <span>AZ 88161</span>
-          <p>Digitales Mess- und Prüfgerät für Laboranwendungen.</p>
+          <p data-i18n="devicedesc.azinstrument.d3">Digitales Mess- und Prüfgerät für Laboranwendungen.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 3.284 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="AZ 88161" data-price="3284"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 8551">
           <img src="images/catalog/az-instrument/az_04.jpg" alt="AZ 8551" loading="lazy" width="160" height="160" />
           <span>AZ 8551</span>
-          <p>Multifunktionsmessgerät für Temperatur- und Wasserparameter.</p>
+          <p data-i18n="devicedesc.azinstrument.d4">Multifunktionsmessgerät für Temperatur- und Wasserparameter.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 11.973 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="AZ 8551" data-price="11973"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 7701">
           <img src="images/catalog/az-instrument/az_05.jpg" alt="AZ 7701" loading="lazy" width="160" height="160" />
           <span>AZ 7701</span>
-          <p>Präzisionsmessgerät von AZ Instrument für den Laboreinsatz.</p>
+          <p data-i18n="devicedesc.azinstrument.d5">Präzisionsmessgerät von AZ Instrument für den Laboreinsatz.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 6.341 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="AZ 7701" data-price="6341"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
     </div>
 
-    <a class="btn-primary brand-page-cta" href="index.html#kontakt">Nachricht senden</a>
+    <a class="btn-primary brand-page-cta" href="index.html#kontakt" data-i18n="shared.requestBtn">Nachricht senden</a>
   </main>
 
   <footer>
     <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
     <div class="footer-links">
-      <a href="index.html">Startseite</a>
-      <a href="zertifikate.html">Zertifikate</a>
-      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
-      <a href="agb.html">AGB</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html" data-i18n="brandpage.home">Startseite</a>
+      <a href="zertifikate.html" data-i18n="footer.zertifikate">Zertifikate</a>
+      <a href="zahlung-versand.html" data-i18n="footer.zahlungVersand">Zahlung &amp; Versand</a>
+      <a href="agb.html" data-i18n="footer.agb">AGB</a>
+      <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
     </div>
-    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+    <p data-i18n="footer.copyright">© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
   </footer>
 
   <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
-    <p>
+    <p data-i18n-html="consent.text">
       Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
     </p>
-    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+    <button class="cookie-consent-btn" id="cookieAccept" data-i18n="consent.accept">Akzeptieren</button>
   </div>
 
   <!-- CART -->
@@ -147,6 +154,7 @@
   </div>
 
   <script src="js/theme.min.js"></script>
+  <script src="js/i18n.min.js"></script>
   <script src="js/script.min.js"></script>
   <script src="js/cart.min.js"></script>
   <script>

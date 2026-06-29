@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,16 +14,23 @@
   <div class="bg-water" aria-hidden="true"></div>
 
   <main class="legal-page">
-    <a class="back-link" href="index.html">← Zurück zur Startseite</a>
-    <h1>Zertifikate</h1>
+    <div class="brand-page-topbar">
+      <a class="back-link" href="index.html" data-i18n="brandpage.backLink">← Zurück zur Startseite</a>
+      <div class="lang-switch">
+      <button data-lang="de">DE</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ar">AR</button>
+    </div>
+    </div>
+    <h1 data-i18n="zertifikate.title">Zertifikate</h1>
 
-    <p class="legal-note">
+    <p class="legal-note" data-i18n="zertifikate.note">
       Platzhalter-Seite – bitte die echten Zertifikats-Scans (PDF oder Bild) für jede aufgeführte
       Norm ergänzen. Ohne reale Dokumente sollten hier keine Zertifizierungen behauptet werden.
     </p>
 
-    <h2>Unsere Qualitätsnachweise</h2>
-    <p>
+    <h2 data-i18n="zertifikate.introHeading">Unsere Qualitätsnachweise</h2>
+    <p data-i18n="zertifikate.introBody">
       Madar Yara Co. handelt ausschließlich mit Geräten, die nach internationalen Normen
       zertifiziert sind. Die zugehörigen Nachweise unserer Lieferanten und unseres eigenen
       Qualitätsmanagements stellen wir hier zum Download bereit.
@@ -32,61 +39,62 @@
     <div class="cert-grid">
       <div class="cert-card">
         <div class="cert-card-icon">📄</div>
-        <h3>ISO 9001</h3>
-        <p>Qualitätsmanagementsystem</p>
-        <a class="btn-small" href="#">[Zertifikat hinzufügen]</a>
+        <h3 data-i18n="zertifikate.c1.h">ISO 9001</h3>
+        <p data-i18n="zertifikate.c1.p">Qualitätsmanagementsystem</p>
+        <a class="btn-small" href="#" data-i18n="zertifikate.certBtn">[Zertifikat hinzufügen]</a>
       </div>
       <div class="cert-card">
         <div class="cert-card-icon">📄</div>
-        <h3>CE-Konformität</h3>
-        <p>Europäische Konformitätserklärung für gehandelte Geräte</p>
-        <a class="btn-small" href="#">[Zertifikat hinzufügen]</a>
+        <h3 data-i18n="zertifikate.c2.h">CE-Konformität</h3>
+        <p data-i18n="zertifikate.c2.p">Europäische Konformitätserklärung für gehandelte Geräte</p>
+        <a class="btn-small" href="#" data-i18n="zertifikate.certBtn">[Zertifikat hinzufügen]</a>
       </div>
       <div class="cert-card">
         <div class="cert-card-icon">📄</div>
-        <h3>EN 61010</h3>
-        <p>Sicherheitsbestimmungen für elektrische Mess-, Steuer-, Regel- und Laborgeräte</p>
-        <a class="btn-small" href="#">[Zertifikat hinzufügen]</a>
+        <h3 data-i18n="zertifikate.c3.h">EN 61010</h3>
+        <p data-i18n="zertifikate.c3.p">Sicherheitsbestimmungen für elektrische Mess-, Steuer-, Regel- und Laborgeräte</p>
+        <a class="btn-small" href="#" data-i18n="zertifikate.certBtn">[Zertifikat hinzufügen]</a>
       </div>
       <div class="cert-card">
         <div class="cert-card-icon">📄</div>
-        <h3>ISO 14001</h3>
-        <p>Umweltmanagementsystem [falls vorhanden]</p>
-        <a class="btn-small" href="#">[Zertifikat hinzufügen]</a>
+        <h3 data-i18n="zertifikate.c4.h">ISO 14001</h3>
+        <p data-i18n="zertifikate.c4.p">Umweltmanagementsystem [falls vorhanden]</p>
+        <a class="btn-small" href="#" data-i18n="zertifikate.certBtn">[Zertifikat hinzufügen]</a>
       </div>
     </div>
 
-    <h2>Hersteller-Zertifikate</h2>
-    <p>
+    <h2 data-i18n="zertifikate.manufacturerHeading">Hersteller-Zertifikate</h2>
+    <p data-i18n="zertifikate.manufacturerBody">
       Zusätzlich stellen wir auf Anfrage die werksseitigen Qualitäts- und Kalibrierzertifikate
       (Werkszeugnis, Konformitätserklärung) der jeweiligen Hersteller – Thermomac, Optika,
       Milwaukee Instruments, Atago u. a. – für jede Lieferung zur Verfügung.
     </p>
 
-    <a class="btn-primary" href="index.html#kontakt">Zertifikat anfordern</a>
+    <a class="btn-primary" href="index.html#kontakt" data-i18n="zertifikate.cta">Zertifikat anfordern</a>
   </main>
 
   <footer>
     <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
     <div class="footer-links">
-      <a href="index.html">Startseite</a>
-      <a href="zertifikate.html">Zertifikate</a>
-      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
-      <a href="agb.html">AGB</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html" data-i18n="brandpage.home">Startseite</a>
+      <a href="zertifikate.html" data-i18n="footer.zertifikate">Zertifikate</a>
+      <a href="zahlung-versand.html" data-i18n="footer.zahlungVersand">Zahlung &amp; Versand</a>
+      <a href="agb.html" data-i18n="footer.agb">AGB</a>
+      <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
     </div>
-    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+    <p data-i18n="footer.copyright">© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
   </footer>
 
   <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
-    <p>
+    <p data-i18n-html="consent.text">
       Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
     </p>
-    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+    <button class="cookie-consent-btn" id="cookieAccept" data-i18n="consent.accept">Akzeptieren</button>
   </div>
 
   <script src="js/theme.min.js"></script>
+  <script src="js/i18n.min.js"></script>
   <script src="js/script.min.js"></script>
   <script>
     (function () {

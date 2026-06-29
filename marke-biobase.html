@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,13 +14,20 @@
   <div class="bg-water" aria-hidden="true"></div>
 
   <main class="brand-page">
-    <a class="back-link" href="index.html#markenstreifen">← Zurück zur Startseite</a>
+    <div class="brand-page-topbar">
+      <a class="back-link" href="index.html#markenstreifen" data-i18n="brandpage.backLink">← Zurück zur Startseite</a>
+    <div class="lang-switch">
+      <button data-lang="de">DE</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ar">AR</button>
+    </div>
+    </div>
 
     <div class="brand-page-head">
       <span class="brand-logo-card"><img class="brand-page-logo" src="images/logo-biobase.png" alt="Biobase Logo" loading="lazy" /></span>
       <div>
         <h1>Biobase</h1>
-        <p>Sterilisation und Autoklaven · 1 Geräte</p>
+        <p data-i18n="brandpage.subtitle.biobase">Sterilisation und Autoklaven · 1 Geräte</p>
       </div>
     </div>
 
@@ -28,33 +35,33 @@
         <div class="mini-item-card" data-reveal data-product="Biobase BKQ-B50 II">
           <img src="images/catalog/biobase/biobase_01.jpg" alt="Biobase BKQ-B50 II" loading="lazy" width="160" height="160" />
           <span>Biobase BKQ-B50 II</span>
-          <p>Laborgerät von Biobase für die professionelle Probenvorbereitung und -analyse.</p>
+          <p data-i18n="devicedesc.biobase.d1">Laborgerät von Biobase für die professionelle Probenvorbereitung und -analyse.</p>
           <div class="mini-item-price"><span data-i18n="shared.priceLabel">Preis:</span> 336.375 TL</div>
           <button class="btn-cart-add btn-cart-add--mini" type="button" data-product="Biobase BKQ-B50 II" data-price="336375"><span data-i18n="shared.addToCart">In den Warenkorb</span></button>
         </div>
     </div>
 
-    <a class="btn-primary brand-page-cta" href="index.html#kontakt">Nachricht senden</a>
+    <a class="btn-primary brand-page-cta" href="index.html#kontakt" data-i18n="shared.requestBtn">Nachricht senden</a>
   </main>
 
   <footer>
     <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
     <div class="footer-links">
-      <a href="index.html">Startseite</a>
-      <a href="zertifikate.html">Zertifikate</a>
-      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
-      <a href="agb.html">AGB</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html" data-i18n="brandpage.home">Startseite</a>
+      <a href="zertifikate.html" data-i18n="footer.zertifikate">Zertifikate</a>
+      <a href="zahlung-versand.html" data-i18n="footer.zahlungVersand">Zahlung &amp; Versand</a>
+      <a href="agb.html" data-i18n="footer.agb">AGB</a>
+      <a href="impressum.html" data-i18n="footer.imprint">Impressum</a>
+      <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutz</a>
     </div>
-    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+    <p data-i18n="footer.copyright">© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
   </footer>
 
   <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
-    <p>
+    <p data-i18n-html="consent.text">
       Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
     </p>
-    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+    <button class="cookie-consent-btn" id="cookieAccept" data-i18n="consent.accept">Akzeptieren</button>
   </div>
 
   <!-- CART -->
@@ -119,6 +126,7 @@
   </div>
 
   <script src="js/theme.min.js"></script>
+  <script src="js/i18n.min.js"></script>
   <script src="js/script.min.js"></script>
   <script src="js/cart.min.js"></script>
   <script>
