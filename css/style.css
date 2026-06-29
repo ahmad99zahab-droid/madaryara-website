@@ -1452,6 +1452,14 @@ section { padding: 90px 48px; max-width: 1200px; margin: 0 auto; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
+/* Some brand logos (Borox, Optika, Milwaukee wordmark) are white/transparent
+   artwork. They always sit on a white .brand-logo-card background (in both
+   themes), so invert them to black/blue unconditionally - otherwise they're
+   invisible white-on-white. */
+.logo-needs-invert {
+  filter: invert(1);
+}
+
 .brand-logo-img.is-baked {
   height: 46px;
   border-radius: 6px;
