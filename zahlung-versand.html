@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahlung &amp; Versand – Madar Yara Co.</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#14163a" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.min.css" />
+</head>
+<body>
+  <div class="bg-water" aria-hidden="true"></div>
+
+  <main class="legal-page">
+    <a class="back-link" href="index.html">← Zurück zur Startseite</a>
+    <h1>Zahlung &amp; Versand</h1>
+
+    <p class="legal-note">
+      Platzhalter-Seite – bitte Bankverbindung, konkrete Zahlungsbedingungen und tatsächliche
+      Versandpartner/-zeiten durch die echten Angaben ersetzen.
+    </p>
+
+    <h2>Zahlungsbedingungen</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🏦 Banküberweisung (T/T)</h3>
+        <p>
+          Bank: [Bankname]<br />
+          IBAN: [IBAN]<br />
+          SWIFT/BIC: [SWIFT-Code]<br />
+          Kontoinhaber: Madar Yara Co.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>📃 Akkreditiv (L/C)</h3>
+        <p>
+          Für größere Bestellmengen akzeptieren wir unwiderrufliche Letters of Credit gemäß
+          den Richtlinien der ICC (UCP 600). Details auf Anfrage.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>💳 Anzahlung</h3>
+        <p>
+          Üblich sind [30 %] Anzahlung bei Bestellung und der Restbetrag vor Versand bzw.
+          gegen Versanddokumente – abhängig von Bestellvolumen und Lieferland.
+        </p>
+      </div>
+    </div>
+
+    <h2>Versand &amp; Lieferzeiten</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🚚 Lieferzeit</h3>
+        <p>2–5 Werktage innerhalb Europas, 5–10 Werktage weltweit – je nach Verfügbarkeit und Zielland.</p>
+      </div>
+      <div class="info-card">
+        <h3>📦 Incoterms</h3>
+        <p>Lieferung standardmäßig nach [EXW / FOB / CIF] – andere Incoterms nach Absprache möglich.</p>
+      </div>
+      <div class="info-card">
+        <h3>🌍 Zollabwicklung</h3>
+        <p>Alle nötigen Export-Dokumente (Rechnung, Packliste, Ursprungszeugnis) stellen wir vollständig bereit.</p>
+      </div>
+    </div>
+
+    <p>
+      Bei Fragen zu Zahlung oder Versand kontaktieren Sie uns – wir erstellen Ihnen gerne ein
+      individuelles Angebot inklusive aller Liefer- und Zahlungskonditionen.
+    </p>
+
+    <a class="btn-primary" href="index.html#kontakt">Angebot anfordern</a>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="zertifikate.html">Zertifikate</a>
+      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
+      <a href="agb.html">AGB</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
+    <p>
+      Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+    </p>
+    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+  </div>
+
+  <script src="js/theme.min.js"></script>
+  <script src="js/script.min.js"></script>
+  <script>
+    (function () {
+      var KEY = 'madaryara-consent-accepted';
+      var MAX_AGE = 180 * 24 * 60 * 60 * 1000;
+      var banner = document.getElementById('cookieConsent');
+      var btn = document.getElementById('cookieAccept');
+      if (!banner || !btn) return;
+      var acceptedAt = parseInt(localStorage.getItem(KEY), 10);
+      var isStillValid = acceptedAt && (Date.now() - acceptedAt) < MAX_AGE;
+      if (!isStillValid) {
+        banner.hidden = false;
+        requestAnimationFrame(function () { banner.classList.add('visible'); });
+      }
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, String(Date.now()));
+        banner.classList.remove('visible');
+        setTimeout(function () { banner.hidden = true; }, 400);
+      });
+    })();
+  </script>
+</body>
+</html>

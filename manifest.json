@@ -1,0 +1,22 @@
+{
+  "name": "Madar Yara Co.",
+  "short_name": "Madar Yara",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#14163a",
+  "theme_color": "#14163a",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

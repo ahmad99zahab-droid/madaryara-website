@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – Madar Yara Co.</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#14163a" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.min.css" />
+</head>
+<body>
+  <div class="bg-water" aria-hidden="true"></div>
+
+  <main class="legal-page">
+    <a class="back-link" href="index.html">← Zurück zur Startseite</a>
+    <h1>Datenschutzerklärung</h1>
+
+    <p class="legal-note">
+      Platzhalter-Seite – bitte alle eckigen Klammern durch die echten Angaben
+      deines Unternehmens ersetzen und mit einer rechtlich geprüften
+      Datenschutzerklärung (z. B. über einen Generator oder einen Anwalt)
+      abgleichen, bevor die Seite live geht.
+    </p>
+
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Madar Yara Co.<br />
+      [Straße und Hausnummer]<br />
+      [PLZ und Ort]<br />
+      E-Mail: sales@madaryara.com<br />
+      Telefon: +963 998686907
+    </p>
+
+    <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+    <p>
+      Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden die von Ihnen
+      mitgeteilten Daten (Name, E-Mail-Adresse, Nachrichteninhalt, ggf. weitere freiwillige
+      Angaben) ausschließlich zur Bearbeitung Ihrer Anfrage und für eventuelle Anschlussfragen
+      gespeichert und verwendet.
+    </p>
+
+    <h2>3. Rechtsgrundlage der Verarbeitung</h2>
+    <p>
+      Die Verarbeitung der bei Kontaktaufnahme übermittelten Daten erfolgt auf Grundlage von
+      Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO
+      (berechtigtes Interesse an der Bearbeitung von Anfragen).
+    </p>
+
+    <h2>4. Weitergabe von Daten</h2>
+    <p>
+      Eine Übermittlung Ihrer Daten an Dritte erfolgt nicht, es sei denn, dies ist zur
+      Vertragsabwicklung erforderlich (z. B. Versanddienstleister, Zollabwicklung) oder
+      gesetzlich vorgeschrieben.
+    </p>
+
+    <h2>5. Speicherdauer</h2>
+    <p>
+      Personenbezogene Daten werden gelöscht, sobald sie für die Zwecke, für die sie erhoben
+      wurden, nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten
+      bestehen.
+    </p>
+
+    <h2>6. Cookies und Analyse-Tools</h2>
+    <p>
+      [Hier angeben, ob und welche Cookies/Analyse-Tools eingesetzt werden, z. B. ein
+      datenschutzfreundlicher Analysedienst. Falls noch keine Analyse-Tools aktiv sind,
+      kann dieser Abschnitt entsprechend angepasst werden.]
+    </p>
+
+    <h2>7. Ihre Rechte</h2>
+    <p>
+      Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der
+      Verarbeitung Ihrer gespeicherten personenbezogenen Daten, ein Widerspruchsrecht gegen die
+      Verarbeitung sowie ein Recht auf Datenübertragbarkeit. Zudem steht Ihnen ein
+      Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu.
+    </p>
+
+    <h2>8. Kontakt für Datenschutzanfragen</h2>
+    <p>
+      Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten wenden
+      Sie sich bitte an: sales@madaryara.com
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="zertifikate.html">Zertifikate</a>
+      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
+      <a href="agb.html">AGB</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- PRIVACY CONSENT BANNER -->
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
+    <p>
+      Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+    </p>
+    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+  </div>
+
+  <script src="js/theme.min.js"></script>
+  <script>
+    (function () {
+      var KEY = 'madaryara-consent-accepted';
+      var MAX_AGE = 180 * 24 * 60 * 60 * 1000;
+      var banner = document.getElementById('cookieConsent');
+      var btn = document.getElementById('cookieAccept');
+      if (!banner || !btn) return;
+      var acceptedAt = parseInt(localStorage.getItem(KEY), 10);
+      var isStillValid = acceptedAt && (Date.now() - acceptedAt) < MAX_AGE;
+      if (!isStillValid) {
+        banner.hidden = false;
+        requestAnimationFrame(function () { banner.classList.add('visible'); });
+      }
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, String(Date.now()));
+        banner.classList.remove('visible');
+        setTimeout(function () { banner.hidden = true; }, 400);
+      });
+    })();
+  </script>
+</body>
+</html>

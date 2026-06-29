@@ -1,0 +1,80 @@
+[
+ {
+  "slug": "axis",
+  "label": "Axis",
+  "logo": "images/logo-axis.png",
+  "card": false,
+  "count": 7
+ },
+ {
+  "slug": "biobase",
+  "label": "Biobase",
+  "logo": "images/logo-biobase.png",
+  "card": true,
+  "count": 1
+ },
+ {
+  "slug": "kimyalab",
+  "label": "Kimyalab",
+  "logo": "images/logo-kimyalab.png",
+  "card": false,
+  "count": 25
+ },
+ {
+  "slug": "az-instrument",
+  "label": "AZ Instrument",
+  "logo": "images/logo-az-instrument.png",
+  "card": true,
+  "count": 5
+ },
+ {
+  "slug": "borox",
+  "label": "Borox",
+  "logo": "images/logo-borox.png",
+  "card": false,
+  "count": 10
+ },
+ {
+  "slug": "milwaukee",
+  "label": "Milwaukee Instruments",
+  "logo": "images/logo-milwaukee.png",
+  "card": false,
+  "count": 25
+ },
+ {
+  "slug": "radwag",
+  "label": "Radwag",
+  "logo": "images/logo-radwag.png",
+  "card": true,
+  "count": 3
+ },
+ {
+  "slug": "thermomac",
+  "label": "Thermomac",
+  "logo": "images/logo-thermomac.png",
+  "card": false,
+  "baked": true,
+  "count": 17
+ },
+ {
+  "slug": "atago",
+  "label": "Atago",
+  "logo": "images/logo-atago.png",
+  "card": true,
+  "count": 22
+ },
+ {
+  "slug": "optika",
+  "label": "Optika",
+  "logo": "images/logo-optika.png",
+  "card": false,
+  "count": 21
+ },
+ {
+  "slug": "beyanlab",
+  "label": "Beyanlab",
+  "logo": "images/logo-beyanlab.png",
+  "card": true,
+  "count": 20
+ }
+]

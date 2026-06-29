@@ -1,0 +1,37 @@
+[
+ {
+  "file": "axis_01.jpg",
+  "name": "AXIS ATS 120",
+  "spec": "Feuchtebestimmungsgerät · 120g, 0,001g"
+ },
+ {
+  "file": "axis_02.jpg",
+  "name": "AXIS ACN 220",
+  "spec": "Analytische Laborwaage · 220g, 0,0001g"
+ },
+ {
+  "file": "axis_03.jpg",
+  "name": "AXIS ALN 220G",
+  "spec": "Analytische Laborwaage · 220g, 0,0001g"
+ },
+ {
+  "file": "axis_04.jpg",
+  "name": "AXIS ALN 220",
+  "spec": "Analytische Laborwaage · 220g, 0,0001g"
+ },
+ {
+  "file": "axis_05.jpg",
+  "name": "AXIS BTA2100D",
+  "spec": "Präzisionswaage · 2100g, 0,01g"
+ },
+ {
+  "file": "axis_06.jpg",
+  "name": "AXIS BTA300D",
+  "spec": "Präzisionswaage · 300g, 0,001g"
+ },
+ {
+  "file": "axis_07.jpg",
+  "name": "AXIS BTA210D",
+  "spec": "Präzisionswaage · 210g, 0,001g"
+ }
+]

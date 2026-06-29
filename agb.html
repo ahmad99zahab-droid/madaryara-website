@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGB – Madar Yara Co.</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#14163a" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.min.css" />
+</head>
+<body>
+  <div class="bg-water" aria-hidden="true"></div>
+
+  <main class="legal-page">
+    <a class="back-link" href="index.html">← Zurück zur Startseite</a>
+    <h1>Allgemeine Geschäftsbedingungen</h1>
+
+    <p class="legal-note">
+      Platzhalter-Seite – diese AGB sind ein allgemeiner Entwurf für den B2B-Gerätehandel und
+      ersetzen keine Rechtsberatung. Bitte vor Veröffentlichung durch einen Rechtsanwalt prüfen
+      und an die tatsächlichen Geschäftsabläufe sowie das anwendbare Recht anpassen.
+    </p>
+
+    <h2>§ 1 Geltungsbereich</h2>
+    <p>
+      Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Madar Yara Co.
+      (nachfolgend „Verkäufer“) und ihren gewerblichen Kunden (nachfolgend „Käufer“) über den
+      Verkauf und Export von Labor- und Messgeräten.
+    </p>
+
+    <h2>§ 2 Vertragsschluss &amp; Angebote</h2>
+    <p>
+      Alle Angebote des Verkäufers sind freibleibend und stellen keine verbindliche Offerte dar,
+      sofern nicht ausdrücklich als verbindlich bezeichnet. Ein Vertrag kommt erst mit schriftlicher
+      Auftragsbestätigung durch den Verkäufer zustande.
+    </p>
+
+    <h2>§ 3 Preise &amp; Zahlungsbedingungen</h2>
+    <p>
+      Alle Preise verstehen sich, sofern nicht anders angegeben, in [USD/EUR] zzgl. Versand,
+      Zoll und etwaiger Steuern/Gebühren des Empfängerlandes. Zahlungsbedingungen werden je
+      Bestellung individuell vereinbart (siehe <a href="zahlung-versand.html">Zahlung &amp; Versand</a>).
+    </p>
+
+    <h2>§ 4 Lieferung &amp; Gefahrübergang</h2>
+    <p>
+      Liefertermine sind, sofern nicht ausdrücklich als fix vereinbart, unverbindliche
+      Richtwerte. Die Gefahr geht gemäß der vereinbarten Incoterms-Klausel auf den Käufer über.
+    </p>
+
+    <h2>§ 5 Gewährleistung</h2>
+    <p>
+      Der Verkäufer gewährt auf neue Geräte eine Gewährleistung von [12/24] Monaten ab
+      Lieferdatum gemäß den Herstellerbedingungen. Ausgenommen sind Verschleißteile sowie
+      Schäden durch unsachgemäße Handhabung, Transport durch Dritte oder eigenmächtige Eingriffe.
+    </p>
+
+    <h2>§ 6 Reklamation &amp; Rückgabe</h2>
+    <p>
+      Offensichtliche Mängel sind innerhalb von [7] Tagen nach Wareneingang schriftlich
+      anzuzeigen. Eine Rückgabe ist nur nach vorheriger Absprache und in Originalverpackung möglich.
+    </p>
+
+    <h2>§ 7 Eigentumsvorbehalt</h2>
+    <p>
+      Die gelieferte Ware bleibt bis zur vollständigen Bezahlung Eigentum des Verkäufers.
+    </p>
+
+    <h2>§ 8 Haftungsbeschränkung</h2>
+    <p>
+      Der Verkäufer haftet nur bei Vorsatz oder grober Fahrlässigkeit unbeschränkt; im Übrigen
+      ist die Haftung auf den Auftragswert begrenzt, soweit gesetzlich zulässig.
+    </p>
+
+    <h2>§ 9 Anwendbares Recht &amp; Gerichtsstand</h2>
+    <p>
+      Es gilt das Recht [Land/Sitz des Verkäufers] unter Ausschluss des UN-Kaufrechts (CISG),
+      sofern nicht abweichend vereinbart. Gerichtsstand ist, soweit zulässig, [Ort].
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="zertifikate.html">Zertifikate</a>
+      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
+      <a href="agb.html">AGB</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
+    <p>
+      Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+    </p>
+    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+  </div>
+
+  <script src="js/theme.min.js"></script>
+  <script src="js/script.min.js"></script>
+  <script>
+    (function () {
+      var KEY = 'madaryara-consent-accepted';
+      var MAX_AGE = 180 * 24 * 60 * 60 * 1000;
+      var banner = document.getElementById('cookieConsent');
+      var btn = document.getElementById('cookieAccept');
+      if (!banner || !btn) return;
+      var acceptedAt = parseInt(localStorage.getItem(KEY), 10);
+      var isStillValid = acceptedAt && (Date.now() - acceptedAt) < MAX_AGE;
+      if (!isStillValid) {
+        banner.hidden = false;
+        requestAnimationFrame(function () { banner.classList.add('visible'); });
+      }
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, String(Date.now()));
+        banner.classList.remove('visible');
+        setTimeout(function () { banner.hidden = true; }, 400);
+      });
+    })();
+  </script>
+</body>
+</html>

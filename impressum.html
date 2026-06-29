@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Madar Yara Co.</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#14163a" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="css/style.min.css" />
+</head>
+<body>
+  <div class="bg-water" aria-hidden="true"></div>
+
+  <main class="legal-page">
+    <a class="back-link" href="index.html">← Zurück zur Startseite</a>
+    <h1>Impressum</h1>
+
+    <p class="legal-note">
+      Platzhalter-Seite – bitte alle eckigen Klammern durch die echten Angaben
+      deines Unternehmens ersetzen. Die Pflichtangaben richten sich nach § 5 TMG
+      (für Anbieter mit Sitz in Deutschland) bzw. den jeweils geltenden
+      gesetzlichen Vorgaben am Unternehmenssitz.
+    </p>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>
+      Madar Yara Co.<br />
+      [Rechtsform, z. B. Einzelunternehmen / GmbH]<br />
+      [Straße und Hausnummer]<br />
+      [PLZ und Ort]<br />
+      [Land]
+    </p>
+
+    <h2>Vertreten durch</h2>
+    <p>[Name der vertretungsberechtigten Person(en)]</p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: +963 998686907<br />
+      E-Mail: sales@madaryara.com
+    </p>
+
+    <h2>Registereintrag</h2>
+    <p>
+      Eintragung im [Handelsregister / Gewerberegister]<br />
+      Registergericht: [Registergericht]<br />
+      Registernummer: [Registernummer]
+    </p>
+
+    <h2>Umsatzsteuer-ID</h2>
+    <p>
+      Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+      [USt-IdNr., falls vorhanden]
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      [Name]<br />
+      [Anschrift wie oben, falls abweichend]
+    </p>
+
+    <h2>EU-Streitschlichtung</h2>
+    <p>
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+      https://ec.europa.eu/consumers/odr/. Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+      Verbraucherschlichtungsstelle teilzunehmen, sofern dies nicht gesondert angegeben ist.
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+      nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+      Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+      Informationen zu überwachen.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+      Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+      dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet.
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-logo"><span class="logo-mark" aria-hidden="true"></span>Madar Yara Co.</div>
+    <div class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="zertifikate.html">Zertifikate</a>
+      <a href="zahlung-versand.html">Zahlung &amp; Versand</a>
+      <a href="agb.html">AGB</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p>© 2026 Madar Yara Co. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- PRIVACY CONSENT BANNER -->
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Datenschutzhinweis" hidden>
+    <p>
+      Wir nutzen auf dieser Website nur die für den Betrieb notwendigen Funktionen. Mit Klick auf „Akzeptieren“ stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.
+    </p>
+    <button class="cookie-consent-btn" id="cookieAccept">Akzeptieren</button>
+  </div>
+
+  <script src="js/theme.min.js"></script>
+  <script>
+    (function () {
+      var KEY = 'madaryara-consent-accepted';
+      var MAX_AGE = 180 * 24 * 60 * 60 * 1000;
+      var banner = document.getElementById('cookieConsent');
+      var btn = document.getElementById('cookieAccept');
+      if (!banner || !btn) return;
+      var acceptedAt = parseInt(localStorage.getItem(KEY), 10);
+      var isStillValid = acceptedAt && (Date.now() - acceptedAt) < MAX_AGE;
+      if (!isStillValid) {
+        banner.hidden = false;
+        requestAnimationFrame(function () { banner.classList.add('visible'); });
+      }
+      btn.addEventListener('click', function () {
+        localStorage.setItem(KEY, String(Date.now()));
+        banner.classList.remove('visible');
+        setTimeout(function () { banner.hidden = true; }, 400);
+      });
+    })();
+  </script>
+</body>
+</html>
