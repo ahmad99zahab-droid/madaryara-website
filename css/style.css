@@ -2820,6 +2820,12 @@ html[dir="rtl"] .product-icon { direction: ltr; }
 
 .btn-small:active { transform: translateY(0); }
 
+/* Wraps the mixed text+span "Alle X Geräte ansehen (N) →" link content in a
+   single inline box, since flex containers treat bare text runs between
+   inline elements as separate anonymous items and trim their edge spaces -
+   which otherwise swallows the spaces around the translated spans. */
+.btn-small .btn-label { display: inline; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .cursor-glow { width: 280px; height: 280px; filter: blur(18px); }
