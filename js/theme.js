@@ -9,8 +9,8 @@
       const moon = toggle.querySelector('.icon-moon');
       const sun = toggle.querySelector('.icon-sun');
       if (moon && sun) {
-        moon.style.display = theme === 'light' ? '' : 'none';
-        sun.style.display = theme === 'light' ? 'none' : '';
+        moon.style.display = theme === 'light' ? 'inline' : 'none';
+        sun.style.display = theme === 'light' ? 'none' : 'inline';
       }
     }
   }
