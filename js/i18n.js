@@ -68,7 +68,7 @@ const translations = {
       available: 'Verfügbar'
     },
     product: { datasheet: '📄 Datenblatt herunterladen', moreDetails: 'Mehr Details', lessDetails: 'Weniger Details' },
-    shared: { protectionKey: 'Schutzklasse', requestBtn: 'Nachricht senden', questionBtn: 'Frage stellen', addToCart: 'In den Warenkorb' , viewAll: "Alle", viewAllSuffix: "Geräte ansehen", priceLabel: "Preis:"},
+    shared: { protectionKey: 'Schutzklasse', requestBtn: 'Nachricht senden', questionBtn: 'Frage stellen', addToCart: 'In den Warenkorb' , viewAll: "Alle", viewAllSuffix: "Geräte ansehen", viewAllDevices: "Alle Geräte ansehen →", priceLabel: "Preis:"},
     cart: {
       fabAria: 'Warenkorb öffnen',
       title: 'Warenkorb',
@@ -469,7 +469,7 @@ const translations = {
       available: 'Available'
     },
     product: { datasheet: '📄 Download Datasheet', moreDetails: 'More Details', lessDetails: 'Less Details' },
-    shared: { protectionKey: 'Protection Class', requestBtn: 'Send Message', questionBtn: 'Ask a Question', addToCart: 'Add to Cart' , viewAll: "All", viewAllSuffix: "Devices", priceLabel: "Price:"},
+    shared: { protectionKey: 'Protection Class', requestBtn: 'Send Message', questionBtn: 'Ask a Question', addToCart: 'Add to Cart' , viewAll: "All", viewAllSuffix: "Devices", viewAllDevices: "View All Devices →", priceLabel: "Price:"},
     cart: {
       fabAria: 'Open cart',
       title: 'Cart',
@@ -870,7 +870,7 @@ const translations = {
       available: 'متوفر'
     },
     product: { datasheet: '📄 تنزيل ورقة البيانات', moreDetails: 'مزيد من التفاصيل', lessDetails: 'تفاصيل أقل' },
-    shared: { protectionKey: 'درجة الحماية', requestBtn: 'إرسال رسالة', questionBtn: 'اطرح سؤالاً', addToCart: 'أضف إلى السلة' , viewAll: "جميع", viewAllSuffix: "أجهزة", priceLabel: "السعر:"},
+    shared: { protectionKey: 'درجة الحماية', requestBtn: 'إرسال رسالة', questionBtn: 'اطرح سؤالاً', addToCart: 'أضف إلى السلة' , viewAll: "جميع", viewAllSuffix: "أجهزة", viewAllDevices: "عرض جميع الأجهزة ←", priceLabel: "السعر:"},
     cart: {
       fabAria: 'فتح سلة التسوق',
       title: 'سلة التسوق',
