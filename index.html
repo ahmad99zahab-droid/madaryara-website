@@ -215,6 +215,7 @@
 
   <!-- HERO -->
   <div class="hero">
+    <canvas id="hero-particles" aria-hidden="true"></canvas>
     <div class="hero-bg"></div>
     <div class="hero-bubbles" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -259,6 +260,7 @@
 
     <div class="hero-content">
       <div class="badge" data-i18n="hero.badge">Professioneller Gerätehandel &amp; Export</div>
+      <p class="hero-typewriter-line" aria-live="polite"><span id="hero-typewriter"></span><span class="hero-tw-cursor" aria-hidden="true"></span></p>
       <h1 data-i18n-html="hero.title">Präzise Messtechnik<br/><span>für Wasseranalyse</span></h1>
       <p data-i18n="hero.desc">
         Wir exportieren und handeln mit hochwertigen Analyse- und Messgeräten weltweit.
@@ -1959,6 +1961,73 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- WORLD MAP -->
+  <section class="world-map-section" data-reveal>
+    <p class="section-tag" data-i18n="map.tag">Global Export</p>
+    <h2 class="section-title" data-i18n-html="map.title">Lieferung in <span>40+ Länder</span></h2>
+    <div class="world-map-wrap" id="worldMap">
+      <!-- Simplified SVG world map (Robinson-style outline) -->
+      <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Continents as simplified paths (stroke only, no fill for dark/light compat) -->
+        <style>.wm-land{fill:none;stroke:currentColor;stroke-width:1;opacity:0.22;}</style>
+        <!-- Europe -->
+        <path class="wm-land" d="M480,100 L500,95 L520,100 L530,115 L515,130 L510,145 L500,150 L490,145 L480,130 L470,115 Z M500,90 L510,80 L520,85 L525,95 L510,98 L500,95 Z"/>
+        <!-- Africa -->
+        <path class="wm-land" d="M475,165 L510,160 L540,170 L550,200 L545,240 L530,270 L510,290 L490,285 L470,260 L460,230 L462,200 L465,175 Z"/>
+        <!-- Middle East -->
+        <path class="wm-land" d="M530,130 L570,125 L590,140 L585,165 L560,175 L535,170 L525,155 Z"/>
+        <!-- Asia -->
+        <path class="wm-land" d="M560,80 L650,70 L720,80 L760,100 L770,130 L750,160 L710,170 L670,165 L630,150 L600,140 L575,125 L560,110 Z"/>
+        <!-- South/SE Asia -->
+        <path class="wm-land" d="M660,165 L700,160 L730,175 L735,200 L720,210 L695,205 L670,195 L655,180 Z"/>
+        <!-- North America -->
+        <path class="wm-land" d="M120,80 L200,70 L250,80 L270,110 L260,150 L240,180 L210,200 L180,210 L155,195 L130,170 L110,140 L100,110 Z"/>
+        <!-- South America -->
+        <path class="wm-land" d="M215,215 L260,210 L280,240 L275,280 L265,320 L245,350 L220,355 L200,330 L195,290 L200,250 Z"/>
+        <!-- Australia -->
+        <path class="wm-land" d="M720,270 L780,260 L820,280 L825,320 L800,345 L760,350 L730,330 L715,300 Z"/>
+        <!-- Scandinavia/UK rough -->
+        <path class="wm-land" d="M455,75 L465,65 L470,80 L460,90 Z M470,80 L485,75 L490,90 L478,95 Z"/>
+      </svg>
+
+      <!-- Export country dots – positioned as % of SVG viewBox -->
+      <!-- Europe -->
+      <span class="world-map-dot" style="left:48%;top:28%" title="Germany"></span>
+      <span class="world-map-dot" style="left:49%;top:32%" title="Netherlands"></span>
+      <span class="world-map-dot" style="left:51%;top:30%" title="Austria"></span>
+      <span class="world-map-dot" style="left:46%;top:25%" title="UK"></span>
+      <span class="world-map-dot" style="left:45%;top:22%" title="France"></span>
+      <!-- Middle East -->
+      <span class="world-map-dot" style="left:57%;top:38%" title="Jordan"></span>
+      <span class="world-map-dot" style="left:59%;top:35%" title="Lebanon"></span>
+      <span class="world-map-dot" style="left:61%;top:40%" title="UAE"></span>
+      <span class="world-map-dot" style="left:63%;top:38%" title="Saudi Arabia"></span>
+      <span class="world-map-dot" style="left:55%;top:36%" title="Syria"></span>
+      <span class="world-map-dot" style="left:57%;top:42%" title="Egypt"></span>
+      <!-- Africa -->
+      <span class="world-map-dot" style="left:50%;top:50%" title="Libya"></span>
+      <span class="world-map-dot" style="left:52%;top:60%" title="Nigeria"></span>
+      <span class="world-map-dot" style="left:54%;top:70%" title="South Africa"></span>
+      <span class="world-map-dot" style="left:55%;top:45%" title="Morocco"></span>
+      <!-- Asia -->
+      <span class="world-map-dot" style="left:70%;top:28%" title="China"></span>
+      <span class="world-map-dot" style="left:68%;top:35%" title="India"></span>
+      <span class="world-map-dot" style="left:75%;top:38%" title="Malaysia"></span>
+      <span class="world-map-dot" style="left:72%;top:22%" title="Kazakhstan"></span>
+      <span class="world-map-dot" style="left:65%;top:30%" title="Iran"></span>
+      <span class="world-map-dot" style="left:67%;top:24%" title="Pakistan"></span>
+      <!-- Americas -->
+      <span class="world-map-dot" style="left:19%;top:28%" title="USA"></span>
+      <span class="world-map-dot" style="left:18%;top:35%" title="Mexico"></span>
+      <span class="world-map-dot" style="left:24%;top:50%" title="Brazil"></span>
+      <span class="world-map-dot" style="left:22%;top:55%" title="Colombia"></span>
+      <!-- Eastern Europe -->
+      <span class="world-map-dot" style="left:53%;top:24%" title="Turkey"></span>
+      <span class="world-map-dot" style="left:55%;top:22%" title="Ukraine"></span>
+      <span class="world-map-dot" style="left:51%;top:22%" title="Poland"></span>
+    </div>
   </section>
 
   <!-- VORTEILE -->

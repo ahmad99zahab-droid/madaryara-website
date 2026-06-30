@@ -550,3 +550,151 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
     input.focus();
   });
 })();
+
+// ── VISUAL ENHANCEMENTS ──────────────────────────────────────────────────────
+
+// ── 1. PARTICLE CANVAS (hero background network) ──
+(function () {
+  const canvas = document.getElementById('hero-particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, pts;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function init() {
+    resize();
+    const count = Math.floor((W * H) / 14000);
+    pts = Array.from({ length: count }, () => ({
+      x: rand(0, W), y: rand(0, H),
+      vx: rand(-0.3, 0.3), vy: rand(-0.3, 0.3),
+      r: rand(1.5, 3)
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const accentColor = getComputedStyle(document.documentElement)
+      .getPropertyValue('--accent').trim() || '#6366f1';
+
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = accentColor;
+      ctx.globalAlpha = 0.7;
+      ctx.fill();
+    });
+
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 110) {
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = accentColor;
+          ctx.globalAlpha = (1 - d / 110) * 0.35;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  init();
+  draw();
+})();
+
+// ── 2. TYPEWRITER EFFECT (hero) ──
+(function () {
+  const el = document.getElementById('hero-typewriter');
+  if (!el) return;
+
+  const wordsByLang = {
+    de: ['Mikroskope', 'pH-Messgeräte', 'Trockenschränke', 'Refraktometer', 'Präzisionswaagen', 'Sauerstoffmessgeräte'],
+    en: ['Microscopes', 'pH Meters', 'Drying Ovens', 'Refractometers', 'Lab Balances', 'DO Meters'],
+    ar: ['ميكروسكوبات', 'أجهزة pH', 'أفران تجفيف', 'مقاييس انكسار', 'موازين دقيقة', 'أجهزة أكسجين']
+  };
+
+  function getWords() {
+    const lang = window.currentLang || 'en';
+    return wordsByLang[lang] || wordsByLang['en'];
+  }
+
+  let wi = 0, ci = 0, deleting = false, timer;
+
+  function type() {
+    const words = getWords();
+    const word = words[wi];
+    el.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ++ci);
+
+    if (!deleting && ci === word.length) {
+      timer = setTimeout(() => { deleting = true; type(); }, 1800);
+    } else if (deleting && ci === 0) {
+      deleting = false;
+      wi = (wi + 1) % words.length;
+      timer = setTimeout(type, 300);
+    } else {
+      timer = setTimeout(type, deleting ? 45 : 90);
+    }
+  }
+
+  document.addEventListener('i18n:change', () => {
+    clearTimeout(timer);
+    ci = 0; deleting = false;
+    wi = (wi + 1) % getWords().length;
+    type();
+  });
+
+  setTimeout(type, 800);
+})();
+
+// ── 3. ENHANCED STATS COUNTER (spring easing + number formatting) ──
+(function () {
+  const statsEl = document.querySelector('.stats');
+  if (!statsEl || statsEl.dataset.enhancedRan) return;
+  statsEl.dataset.enhancedRan = '1';
+
+  function easeOutElastic(t) {
+    const c4 = (2 * Math.PI) / 4;
+    return t === 0 ? 0 : t === 1 ? 1
+      : Math.pow(2, -9 * t) * Math.sin((t * 9 - 0.75) * c4) + 1;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.querySelectorAll('.stat-num').forEach(el => {
+        const match = el.textContent.trim().match(/^(\d+)(.*)/);
+        if (!match) return;
+        const target = parseInt(match[1]);
+        const suffix = match[2];
+        const duration = 1800;
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const val = Math.round(easeOutElastic(t) * target);
+          el.textContent = (val > 999 ? val.toLocaleString() : val) + suffix;
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+      observer.disconnect();
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(statsEl);
+})();

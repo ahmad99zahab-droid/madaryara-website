@@ -561,6 +561,18 @@ const translations = {
       f4: "Robustes, vollständig abwaschbares Gehäuse",
       f5: "Ideal für Reinheits-/Konzentrationsprüfung"
     },
+    map: {
+      tag: "Weltweiter Export",
+      title: "Lieferung in <span>40+ Länder</span>"
+    },
+    map: {
+      tag: "Global Export",
+      title: "Delivery to <span>40+ Countries</span>"
+    },
+    map: {
+      tag: "تصدير عالمي",
+      title: "توصيل إلى <span>أكثر من 40 دولة</span>"
+    },
     vorteile: {
       tag: 'Warum wir?',
       title: 'Ihre Vorteile mit <span>Madar Yara Co.</span>',

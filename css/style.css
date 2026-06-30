@@ -3294,3 +3294,143 @@ html[dir="rtl"] .checkout-close { right: auto; left: 18px; }
   body.cookie-consent-active .cart-fab { bottom: 190px; }
   .checkout-modal { padding: 26px 20px; }
 }
+
+/* ══════════════════════════════════════════════════════
+   VISUAL ENHANCEMENTS: Glassmorphism glow, 3D flips,
+   particles, world map, typewriter
+   ══════════════════════════════════════════════════════ */
+
+/* ── 1. GLASSMORPHISM GLOW ON CARDS ── */
+.mini-item-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.mini-item-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--accent-rgb), 0.7);
+  box-shadow: 0 0 22px rgba(var(--accent-rgb), 0.3), 0 0 44px rgba(var(--accent-rgb), 0.1), inset 0 0 18px rgba(var(--accent-rgb), 0.05);
+  background: rgba(var(--surface-rgb), 0.75);
+}
+
+.catalog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.catalog-card:hover {
+  box-shadow: 0 0 28px rgba(var(--accent-rgb), 0.28), 0 20px 40px -12px rgba(0,0,0,0.4);
+}
+
+.why-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.why-card:hover {
+  box-shadow: 0 0 24px rgba(var(--accent2-rgb), 0.25), 0 16px 40px -10px rgba(0,0,0,0.35);
+  border-color: rgba(var(--accent2-rgb), 0.5);
+}
+
+/* ── 2. PARTICLE CANVAS ── */
+#hero-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* ── 3. TYPEWRITER LINE IN HERO ── */
+.hero-typewriter-line {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  min-height: 1.4em;
+}
+.hero-tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent2);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── 4. 3D FLIP CARDS (mini-item-card) ── */
+.mini-item-card {
+  perspective: 800px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.mini-item-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 8px 12px;
+}
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  background: rgba(var(--accent-rgb), 0.12);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
+}
+.card-back .mini-item-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.card-back .btn-cart-add--mini {
+  width: 90%;
+  padding: 12px;
+  font-size: 0.85rem;
+}
+
+/* ── 5. WORLD MAP SECTION ── */
+.world-map-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.world-map-wrap {
+  position: relative;
+  max-width: 860px;
+  margin: 32px auto 0;
+}
+.world-map-wrap svg {
+  width: 100%;
+  height: auto;
+  opacity: 0.55;
+}
+.world-map-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent);
+  transform: translate(-50%, -50%);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.world-map-dot:nth-child(odd) { animation-delay: 0.4s; }
+.world-map-dot:nth-child(3n)  { animation-delay: 0.8s; background: var(--accent2); box-shadow: 0 0 6px var(--accent2), 0 0 12px var(--accent2); }
+@keyframes pulse-dot {
+  0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+  50%      { transform: translate(-50%,-50%) scale(1.5); opacity: 0.6; }
+}
