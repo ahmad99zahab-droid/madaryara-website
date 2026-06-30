@@ -565,14 +565,6 @@ const translations = {
       tag: "Weltweiter Export",
       title: "Lieferung in <span>40+ Länder</span>"
     },
-    map: {
-      tag: "Global Export",
-      title: "Delivery to <span>40+ Countries</span>"
-    },
-    map: {
-      tag: "تصدير عالمي",
-      title: "توصيل إلى <span>أكثر من 40 دولة</span>"
-    },
     vorteile: {
       tag: 'Warum wir?',
       title: 'Ihre Vorteile mit <span>Madar Yara Co.</span>',
@@ -1226,6 +1218,10 @@ const translations = {
       f4: "Robust, fully washable housing",
       f5: "Ideal for purity/concentration testing"
     },
+    map: {
+      tag: "Global Export",
+      title: "Delivery to <span>40+ Countries</span>"
+    },
     vorteile: {
       tag: 'Why Us?',
       title: 'Your Advantages with <span>Madar Yara Co.</span>',
@@ -1878,6 +1874,10 @@ const translations = {
       f3: "زمن القياس حوالي 3 ثوانٍ",
       f4: "هيكل متين وقابل للغسل بالكامل",
       f5: "مثالي لفحص النقاء/التركيز"
+    },
+    map: {
+      tag: "تصدير عالمي",
+      title: "توصيل إلى <span>أكثر من 40 دولة</span>"
     },
     vorteile: {
       tag: 'لماذا نحن؟',
