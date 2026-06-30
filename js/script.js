@@ -273,45 +273,22 @@ const sectionObserver = new IntersectionObserver(entries => {
 
 sections.forEach(section => sectionObserver.observe(section));
 
-// Contact form: builds a pre-filled email so the customer only enters their data
-const CONTACT_EMAIL = 'sales@madaryara.com';
+// Contact form: submits via Formspree (server-side delivery to sales@madaryara.com).
+// ACTIVATION: Sign up free at https://formspree.io, create a form for sales@madaryara.com,
+// and replace FORMSPREE_ID below with your form ID (e.g. "xpwzgkda").
+const FORMSPREE_ID = 'YOUR_FORM_ID';
+const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+const FALLBACK_EMAIL = 'sales@madaryara.com';
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
   const submitBtn = contactForm.querySelector('.form-submit');
   const successMsg = contactForm.querySelector('.form-success');
-  const requiredFields = contactForm.querySelectorAll('input:not([type="checkbox"]), textarea');
+  const requiredFields = contactForm.querySelectorAll('input[required]:not([type="checkbox"]), textarea[required]');
   const consentField = contactForm.querySelector('[name="consent"]');
   const t = key => (window.i18n ? window.i18n.t(key) : key);
 
-  function buildMailtoLink() {
-    const firstName = contactForm.querySelector('[name="firstName"]').value.trim();
-    const lastName = contactForm.querySelector('[name="lastName"]').value.trim();
-    const email = contactForm.querySelector('[name="email"]').value.trim();
-    const interest = contactForm.querySelector('[name="interest"]').value.trim();
-    const message = contactForm.querySelector('[name="message"]').value.trim();
-
-    const subject = interest ? `${t('form.mail.subject')} – ${interest}` : t('form.mail.subject');
-    const body = [
-      t('form.mail.greeting'),
-      '',
-      t('form.mail.intro'),
-      '',
-      `${t('form.mail.nameLabel')} ${firstName} ${lastName}`,
-      `${t('form.mail.emailLabel')} ${email}`,
-      `${t('form.mail.interestLabel')} ${interest}`,
-      '',
-      t('form.mail.messageLabel'),
-      message,
-      '',
-      t('form.mail.closing'),
-      `${firstName} ${lastName}`
-    ].join('\n');
-
-    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  submitBtn.addEventListener('click', e => {
+  submitBtn.addEventListener('click', async e => {
     e.preventDefault();
     let valid = true;
 
@@ -328,25 +305,43 @@ if (contactForm) {
 
     if (!valid) return;
 
-    const mailtoLink = buildMailtoLink();
-
     submitBtn.disabled = true;
-    submitBtn.textContent = t('form.sending');
+    submitBtn.textContent = t('form.sending') || 'Sending…';
 
-    setTimeout(() => {
-      window.location.href = mailtoLink;
+    const data = new FormData(contactForm);
+    data.append('_subject', 'New message from madaryara.com');
+
+    // If Formspree not yet activated, fall back to mailto
+    if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+      const firstName = contactForm.querySelector('[name="firstName"]').value.trim();
+      const lastName = contactForm.querySelector('[name="lastName"]').value.trim();
+      const email = contactForm.querySelector('[name="email"]').value.trim();
+      const interest = (contactForm.querySelector('[name="interest"]') || {}).value || '';
+      const message = contactForm.querySelector('[name="message"]').value.trim();
+      const subject = encodeURIComponent(`Nachricht über die Website${interest ? ' – ' + interest : ''}`);
+      const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nE-Mail: ${email}\nProdukt/Interesse: ${interest}\n\n${message}`);
+      setTimeout(() => { window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`; }, 200);
       submitBtn.disabled = false;
-      submitBtn.textContent = t('form.submit');
+      submitBtn.textContent = t('form.submit') || 'Absenden';
       if (successMsg) successMsg.classList.add('visible');
-      requiredFields.forEach(field => {
-        field.value = '';
-        field.classList.remove('error');
-      });
-      if (consentField) {
-        consentField.checked = false;
-        consentField.classList.remove('error');
+      return;
+    }
+
+    try {
+      const res = await fetch(FORMSPREE_URL, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) {
+        if (successMsg) successMsg.classList.add('visible');
+        contactForm.reset();
+      } else {
+        const err = await res.json().catch(() => ({}));
+        alert((err.errors || [{ message: 'Error sending message.' }]).map(e => e.message).join(', '));
       }
-    }, 500);
+    } catch {
+      alert('Network error – please try again or email us directly at ' + FALLBACK_EMAIL);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = t('form.submit') || 'Absenden';
+    }
   });
 
   if (consentField) {

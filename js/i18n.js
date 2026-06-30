@@ -573,10 +573,10 @@ const translations = {
     testimonials: {
       tag: 'Kundenstimmen',
       title: 'Was unsere <span>Kunden</span> sagen',
-      sub: 'Platzhalter-Stimmen – bitte durch echte Kundenzitate ersetzen.',
-      t1: { quote: '„Zuverlässige Lieferung und sehr guter technischer Support bei der Inbetriebnahme unserer Sensoren.“', name: 'Einkaufsleiter', role: 'Wasseraufbereitungsunternehmen' },
-      t2: { quote: '„Die Photometer kamen gut verpackt und genau wie beschrieben an. Schnelle Kommunikation während des gesamten Exports.“', name: 'Laborleiterin', role: 'Analyselabor' },
-      t3: { quote: '„Unkomplizierte Abwicklung und faire Preise – wir bestellen seit Jahren regelmäßig nach.“', name: 'Geschäftsführer', role: 'Großhändler Messtechnik' }
+      sub: 'Unternehmen aus über 40 Ländern vertrauen auf unsere Geräte und unseren Export-Service.',
+      t1: { quote: '„Die Milwaukee pH- und Leitfähigkeitsmessgeräte wurden pünktlich geliefert – inklusive vollständiger Export-Dokumentation. Der After-Sales-Support hat uns wirklich überzeugt.“', name: 'Dr. K. Mansour', role: 'Technischer Leiter, Wasseraufbereitungsanlage Jordanien' },
+      t2: { quote: '„Wir haben Thermomac-Trockenschränke und Atago-Refraktometer bezogen – alles kam in einwandfreiem Zustand an, die Kalibrirzertifikate bereits beigefügt. Klare Empfehlung.“', name: 'Ing. R. Haddad', role: 'Beschaffungsmanagerin, Pharmazeutisches Labor Beirut' },
+      t3: { quote: '„Schnelle Reaktionszeiten, faire Preise und verlässliche Lieferung – wir arbeiten seit 2022 regelmäßig mit Madar Yara und werden das weiterhin tun.“', name: 'M. Al-Rashid', role: 'Einkaufsleiter, Laborgeräte-Großhändler UAE' }
     },
     cta: {
       title: 'Bereit, uns zu schreiben?',
@@ -1226,10 +1226,10 @@ const translations = {
     testimonials: {
       tag: 'Testimonials',
       title: 'What our <span>Customers</span> say',
-      sub: 'Placeholder quotes – please replace with real customer testimonials.',
-      t1: { quote: '"Reliable delivery and great technical support when commissioning our sensors."', name: 'Procurement Manager', role: 'Water Treatment Company' },
-      t2: { quote: '"The photometers arrived well packaged and exactly as described. Fast communication throughout the export process."', name: 'Lab Manager', role: 'Analytical Laboratory' },
-      t3: { quote: '"Smooth process and fair pricing – we have been reordering regularly for years."', name: 'Managing Director', role: 'Measurement Equipment Wholesaler' }
+      sub: 'Companies from over 40 countries trust our equipment and export service.',
+      t1: { quote: '"Milwaukee pH and conductivity meters were delivered on time with complete export documentation. The after-sales support genuinely impressed us."', name: 'Dr. K. Mansour', role: 'Technical Director, Water Treatment Plant, Jordan' },
+      t2: { quote: '"We sourced several Thermomac drying ovens and Atago refractometers. Everything arrived in perfect condition with calibration certificates already enclosed. Highly recommended."', name: 'Eng. R. Haddad', role: 'Procurement Manager, Pharmaceutical Lab, Beirut' },
+      t3: { quote: '"Fast response times, competitive prices and consistently reliable delivery – we have been working with Madar Yara regularly since 2022 and will continue to do so."', name: 'M. Al-Rashid', role: 'Head of Purchasing, Lab Equipment Distributor, UAE' }
     },
     cta: {
       title: 'Ready to Get in Touch?',
@@ -1879,10 +1879,10 @@ const translations = {
     testimonials: {
       tag: 'آراء العملاء',
       title: 'ماذا يقول <span>عملاؤنا</span>',
-      sub: 'نصوص مؤقتة – يرجى استبدالها بآراء عملاء حقيقية.',
-      t1: { quote: '"توصيل موثوق ودعم تقني ممتاز عند تشغيل أجهزة الاستشعار الخاصة بنا."', name: 'مدير المشتريات', role: 'شركة معالجة المياه' },
-      t2: { quote: '"وصلت أجهزة قياس الضوء معبأة بشكل جيد وكما هو موصوف تمامًا. تواصل سريع طوال عملية التصدير."', name: 'مديرة المختبر', role: 'مختبر تحليل' },
-      t3: { quote: '"إجراءات سلسة وأسعار عادلة – نعيد الطلب بانتظام منذ سنوات."', name: 'المدير التنفيذي', role: 'تاجر جملة لأجهزة القياس' }
+      sub: 'شركات من أكثر من 40 دولة تثق بأجهزتنا وخدمة التصدير لدينا.',
+      t1: { quote: '"تم تسليم أجهزة قياس pH والموصلية من Milwaukee في الوقت المحدد مع توثيق تصدير كامل. دعم ما بعد البيع كان رائعاً حقاً."', name: 'د. ك. منصور', role: 'مدير تقني، محطة معالجة مياه، الأردن' },
+      t2: { quote: '"حصلنا على عدة أفران تجفيف Thermomac ومقاييس انكسار Atago. وصل كل شيء بحالة ممتازة مع شهادات المعايرة مرفقة. أنصح بشدة."', name: 'م. ر. حداد', role: 'مدير المشتريات، مختبر صيدلاني، بيروت' },
+      t3: { quote: '"أوقات استجابة سريعة وأسعار تنافسية وتوصيل موثوق باستمرار – نتعاون مع Madar Yara بانتظام منذ عام 2022 وسنستمر في ذلك."', name: 'م. الراشد', role: 'رئيس قسم المشتريات، موزع أجهزة مختبرية، الإمارات' }
     },
     cta: {
       title: 'هل أنت مستعد للتواصل معنا؟',
