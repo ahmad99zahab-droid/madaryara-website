@@ -28,7 +28,7 @@
   let cart = loadCart();
 
   function fmt(n) {
-    return Math.round(n).toLocaleString('tr-TR') + ' TL';
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(n);
   }
 
   function cartTotal() {
