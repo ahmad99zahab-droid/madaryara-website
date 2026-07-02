@@ -710,20 +710,27 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
   if (!overlay) return;
 
   function open(card) {
-    const cardImg  = card.querySelector('img');
-    const nameSpan = card.querySelector('span');
-    const descP    = card.querySelector('p');
+    const isCatalog = card.classList.contains('catalog-card');
 
-    img.src     = cardImg ? cardImg.src : '';
-    img.alt     = cardImg ? cardImg.alt : '';
-    nameEl.textContent  = nameSpan ? nameSpan.textContent : '';
+    // Support both mini-item-card and catalog-card structures
+    const cardImg  = isCatalog ? card.querySelector('.catalog-card-img img') : card.querySelector('img');
+    const nameText = isCatalog ? (card.querySelector('h3') || {}).textContent : (card.querySelector('span') || {}).textContent;
+    const descP    = isCatalog ? card.querySelector('.catalog-card-content p') : card.querySelector('p');
+    const badge    = isCatalog ? card.querySelector('.catalog-card-badge') : null;
 
-    // Extract brand from data-product (first word is brand)
-    const product = card.dataset.product || '';
-    const brand = product.split(' ')[0];
-    brandEl.textContent = brand;
+    img.src  = cardImg ? cardImg.src : '';
+    img.alt  = cardImg ? cardImg.alt : '';
+    nameEl.textContent = nameText || '';
 
-    descEl.textContent  = descP ? descP.textContent : '';
+    // Brand: from badge span on catalog cards, or first word of data-product on mini cards
+    if (badge) {
+      brandEl.textContent = badge.textContent.trim();
+    } else {
+      const product = card.dataset.product || '';
+      brandEl.textContent = product.split(' ')[0];
+    }
+
+    descEl.textContent = descP ? descP.textContent : '';
 
     overlay.hidden = false;
     requestAnimationFrame(() => overlay.classList.add('visible'));
@@ -739,7 +746,7 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
   // Delegate click on Details buttons
   document.addEventListener('click', e => {
     if (e.target.closest('.btn-details-card')) {
-      open(e.target.closest('.mini-item-card'));
+      open(e.target.closest('.mini-item-card') || e.target.closest('.catalog-card'));
     }
   });
 
