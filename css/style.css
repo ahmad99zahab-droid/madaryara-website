@@ -3461,3 +3461,50 @@ html[dir="rtl"] .checkout-close { right: auto; left: 18px; }
 }
 /* Remove old 3D flip rules that are no longer needed */
 .card-inner, .card-front, .card-back { display: contents; }
+
+/* ── ENHANCED WORLD MAP ── */
+.world-map-section { padding: 80px 0; background: radial-gradient(ellipse at 55% 50%, rgba(var(--accent-rgb),0.06) 0%, transparent 70%); }
+.world-map-wrap { position: relative; max-width: 900px; margin: 40px auto 0; }
+.world-map-wrap svg { width: 100%; height: auto; opacity: 0.75; }
+
+/* Hub dot (company origin – Damascus) */
+.world-map-hub {
+  position: absolute;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb),0.3), 0 0 18px rgba(var(--accent-rgb),0.7);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.world-map-hub::before,
+.world-map-hub::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(var(--accent-rgb),0.6);
+  animation: hub-ring 2s ease-out infinite;
+}
+.world-map-hub::after { inset: -14px; animation-delay: 0.7s; }
+@keyframes hub-ring { 0%{opacity:1;transform:scale(1)} 100%{opacity:0;transform:scale(1.8)} }
+
+/* Country dots – improved with dual ring */
+.world-map-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 6px var(--accent2), 0 0 14px rgba(var(--accent2-rgb),0.5);
+  transform: translate(-50%,-50%);
+  animation: pulse-dot 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+.world-map-dot::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--accent2-rgb),0.5);
+  animation: hub-ring 2.5s ease-out infinite;
+}
