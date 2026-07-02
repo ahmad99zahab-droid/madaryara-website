@@ -51,42 +51,49 @@
           <img src="images/catalog/axis/axis_01.jpg" alt="AXIS ATS 120" loading="lazy" width="160" height="160" />
           <span>AXIS ATS 120</span>
           <p data-i18n="devicedesc.axis.d1">Präzisionswaage für genaue Wägungen im Laboralltag.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS ACN 220">
           <img src="images/catalog/axis/axis_02.jpg" alt="AXIS ACN 220" loading="lazy" width="160" height="160" />
           <span>AXIS ACN 220</span>
           <p data-i18n="devicedesc.axis.d2">Analysenwaage für hochpräzise Wägungen kleiner Probenmengen.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS ALN 220G">
           <img src="images/catalog/axis/axis_03.jpg" alt="AXIS ALN 220G" loading="lazy" width="160" height="160" />
           <span>AXIS ALN 220G</span>
           <p data-i18n="devicedesc.axis.d3">Analysenwaage mit interner Kalibrierung für reproduzierbare Messergebnisse.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS ALN 220">
           <img src="images/catalog/axis/axis_04.jpg" alt="AXIS ALN 220" loading="lazy" width="160" height="160" />
           <span>AXIS ALN 220</span>
           <p data-i18n="devicedesc.axis.d4">Analysenwaage für präzise Labor-Wägungen im Mikrogrammbereich.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS BTA2100D">
           <img src="images/catalog/axis/axis_05.jpg" alt="AXIS BTA2100D" loading="lazy" width="160" height="160" />
           <span>AXIS BTA2100D</span>
           <p data-i18n="devicedesc.axis.d5">Hochauflösende Präzisionswaage für größere Probengewichte.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS BTA300D">
           <img src="images/catalog/axis/axis_06.jpg" alt="AXIS BTA300D" loading="lazy" width="160" height="160" />
           <span>AXIS BTA300D</span>
           <p data-i18n="devicedesc.axis.d6">Kompakte Präzisionswaage für den täglichen Laborgebrauch.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AXIS BTA210D">
           <img src="images/catalog/axis/axis_07.jpg" alt="AXIS BTA210D" loading="lazy" width="160" height="160" />
           <span>AXIS BTA210D</span>
           <p data-i18n="devicedesc.axis.d7">Präzisionswaage mit digitaler Anzeige für genaue Wägungen.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
     </div>
@@ -175,6 +182,24 @@
     </div>
   </div>
 
+
+  <!-- DETAILS MODAL -->
+  <div class="details-overlay" id="detailsOverlay" hidden>
+    <div class="details-modal" role="dialog" aria-modal="true" aria-labelledby="detailsName">
+      <button class="details-close" id="detailsClose" type="button" aria-label="Close">&times;</button>
+      <div class="details-img-frame">
+        <div class="details-img-inner">
+          <img id="detailsImg" src="" alt="" />
+        </div>
+      </div>
+      <div class="details-info">
+        <div class="details-brand-badge" id="detailsBrand"></div>
+        <h2 class="details-name" id="detailsName"></h2>
+        <p class="details-desc" id="detailsDesc"></p>
+        <a href="index.html#kontakt" class="details-cta" data-i18n="shared.contactUs">Contact us</a>
+      </div>
+    </div>
+  </div>
   <script src="js/theme.min.js"></script>
   <script src="js/i18n.min.js"></script>
   <script src="js/script.min.js"></script>

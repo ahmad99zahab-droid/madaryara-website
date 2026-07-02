@@ -51,30 +51,35 @@
           <img src="images/catalog/az-instrument/az_01.jpg" alt="AZ 830P" loading="lazy" width="160" height="160" />
           <span>AZ 830P</span>
           <p data-i18n="devicedesc.azinstrument.d1">Tragbares Mehrparameter-Messgerät für Feld- und Labormessungen.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 833PAZ">
           <img src="images/catalog/az-instrument/az_02.jpg" alt="AZ 833PAZ" loading="lazy" width="160" height="160" />
           <span>AZ 833PAZ</span>
           <p data-i18n="devicedesc.azinstrument.d2">Kompaktes Wasseranalyse-Messgerät für den mobilen Einsatz.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 88161">
           <img src="images/catalog/az-instrument/az_03.jpg" alt="AZ 88161" loading="lazy" width="160" height="160" />
           <span>AZ 88161</span>
           <p data-i18n="devicedesc.azinstrument.d3">Digitales Mess- und Prüfgerät für Laboranwendungen.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 8551">
           <img src="images/catalog/az-instrument/az_04.jpg" alt="AZ 8551" loading="lazy" width="160" height="160" />
           <span>AZ 8551</span>
           <p data-i18n="devicedesc.azinstrument.d4">Multifunktionsmessgerät für Temperatur- und Wasserparameter.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
         <div class="mini-item-card" data-reveal data-product="AZ 7701">
           <img src="images/catalog/az-instrument/az_05.jpg" alt="AZ 7701" loading="lazy" width="160" height="160" />
           <span>AZ 7701</span>
           <p data-i18n="devicedesc.azinstrument.d5">Präzisionsmessgerät von AZ Instrument für den Laboreinsatz.</p>
+          <button class="btn-details-card" type="button" data-i18n="shared.details">Details</button>
           <a href="index.html#kontakt" class="btn-contact-card" data-i18n="shared.contactUs">Contact us</a>
         </div>
     </div>
@@ -163,6 +168,24 @@
     </div>
   </div>
 
+
+  <!-- DETAILS MODAL -->
+  <div class="details-overlay" id="detailsOverlay" hidden>
+    <div class="details-modal" role="dialog" aria-modal="true" aria-labelledby="detailsName">
+      <button class="details-close" id="detailsClose" type="button" aria-label="Close">&times;</button>
+      <div class="details-img-frame">
+        <div class="details-img-inner">
+          <img id="detailsImg" src="" alt="" />
+        </div>
+      </div>
+      <div class="details-info">
+        <div class="details-brand-badge" id="detailsBrand"></div>
+        <h2 class="details-name" id="detailsName"></h2>
+        <p class="details-desc" id="detailsDesc"></p>
+        <a href="index.html#kontakt" class="details-cta" data-i18n="shared.contactUs">Contact us</a>
+      </div>
+    </div>
+  </div>
   <script src="js/theme.min.js"></script>
   <script src="js/i18n.min.js"></script>
   <script src="js/script.min.js"></script>

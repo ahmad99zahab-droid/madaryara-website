@@ -698,3 +698,52 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
 
   observer.observe(statsEl);
 })();
+
+// ── DETAILS MODAL ────────────────────────────────────────────────────────────
+(function () {
+  const overlay  = document.getElementById('detailsOverlay');
+  const closeBtn = document.getElementById('detailsClose');
+  const img      = document.getElementById('detailsImg');
+  const nameEl   = document.getElementById('detailsName');
+  const brandEl  = document.getElementById('detailsBrand');
+  const descEl   = document.getElementById('detailsDesc');
+  if (!overlay) return;
+
+  function open(card) {
+    const cardImg  = card.querySelector('img');
+    const nameSpan = card.querySelector('span');
+    const descP    = card.querySelector('p');
+
+    img.src     = cardImg ? cardImg.src : '';
+    img.alt     = cardImg ? cardImg.alt : '';
+    nameEl.textContent  = nameSpan ? nameSpan.textContent : '';
+
+    // Extract brand from data-product (first word is brand)
+    const product = card.dataset.product || '';
+    const brand = product.split(' ')[0];
+    brandEl.textContent = brand;
+
+    descEl.textContent  = descP ? descP.textContent : '';
+
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.classList.add('visible'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+    setTimeout(() => { overlay.hidden = true; }, 320);
+  }
+
+  // Delegate click on Details buttons
+  document.addEventListener('click', e => {
+    if (e.target.closest('.btn-details-card')) {
+      open(e.target.closest('.mini-item-card'));
+    }
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) close(); });
+})();
