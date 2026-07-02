@@ -1897,7 +1897,7 @@
             <h3>LUMISO Expert Photometer</h3>
             <p data-i18n="cat.lumisoexpertphotometer">Multiparameter-Photometer · Wasseranalyse</p>
           </div>
-          <div class="catalog-card-footer"><a href="#kontakt" class="btn-small" data-i18n="shared.requestBtn">Nachricht senden</a></div>
+          <div class="catalog-card-footer"><button class="btn-small btn-details-card" type="button" data-i18n="shared.details">Details</button><a href="#kontakt" class="btn-small btn-contact-card" data-i18n="shared.contactUs">Contact us</a></div>
         </div>
         <div class="catalog-card" data-category="sonstige" data-reveal>
           <div class="catalog-card-img">
@@ -2323,10 +2323,192 @@
         </div>
         <div class="form-group form-product-group" id="formProductGroup">
           <label data-i18n="form.product">🔬 Gerät / Produkt</label>
-          <div class="form-product-field-wrap">
-            <input type="text" name="product" id="formProductInput"
-                   placeholder="z. B. Atago PAL-3, Milwaukee MW806…"
-                   data-i18n-placeholder="form.productPlaceholder" />
+                    <div class="form-product-field-wrap">
+            <select name="product" id="formProductInput" data-i18n-first="form.selectDevice">
+            <option value="" data-i18n="form.selectDevice">-- Gerät auswählen --</option>
+            <optgroup label="FDO® / LUMISO (Eigene Geräte)">
+              <option value="FDO® Trockenschrank">FDO® Trockenschrank</option>
+              <option value="LUMISO Expert Photometer">LUMISO Expert Photometer</option>
+            </optgroup>
+            <optgroup label="Atago – Refractometers">
+              <option value="Atago PAL-3">Atago PAL-3</option>
+              <option value="Atago PAL-RI">Atago PAL-RI</option>
+              <option value="Atago PAL-Salt">Atago PAL-Salt</option>
+              <option value="Atago PAL-39S">Atago PAL-39S</option>
+              <option value="Atago Master-100H">Atago Master-100H</option>
+              <option value="Atago Master-53M">Atago Master-53M</option>
+              <option value="Atago PAL-1">Atago PAL-1</option>
+              <option value="Atago PAL-α">Atago PAL-α</option>
+              <option value="Atago PAL SALT Mohr">Atago PAL SALT Mohr</option>
+              <option value="Atago PAL-Soil">Atago PAL-Soil</option>
+              <option value="Atago PEN-PRO">Atago PEN-PRO</option>
+              <option value="Atago PAL-Moisture">Atago PAL-Moisture</option>
+              <option value="Atago PAL-BX|SALT(+5)">Atago PAL-BX|SALT(+5)</option>
+              <option value="Atago PAL-80S">Atago PAL-80S</option>
+              <option value="Atago Master-20M / 50H">Atago Master-20M / 50H</option>
+              <option value="Atago PAL-91S / 88S">Atago PAL-91S / 88S</option>
+              <option value="Atago PAL-37S">Atago PAL-37S</option>
+              <option value="Atago Master-M">Atago Master-M</option>
+              <option value="Atago PAL-Coffee">Atago PAL-Coffee</option>
+              <option value="Atago PAL-Dried Fruit">Atago PAL-Dried Fruit</option>
+              <option value="Atago PAL-2">Atago PAL-2</option>
+              <option value="Atago PAL-pH Plus">Atago PAL-pH Plus</option>
+            </optgroup>
+            <optgroup label="AXIS – Balances">
+              <option value="AXIS ATS 120">AXIS ATS 120</option>
+              <option value="AXIS ACN 220">AXIS ACN 220</option>
+              <option value="AXIS ALN 220G">AXIS ALN 220G</option>
+              <option value="AXIS ALN 220">AXIS ALN 220</option>
+              <option value="AXIS BTA2100D">AXIS BTA2100D</option>
+              <option value="AXIS BTA300D">AXIS BTA300D</option>
+              <option value="AXIS BTA210D">AXIS BTA210D</option>
+            </optgroup>
+            <optgroup label="az-instrument">
+              <option value="AZ 830P">AZ 830P</option>
+              <option value="AZ 833PAZ">AZ 833PAZ</option>
+              <option value="AZ 88161">AZ 88161</option>
+              <option value="AZ 8551">AZ 8551</option>
+              <option value="AZ 7701">AZ 7701</option>
+            </optgroup>
+            <optgroup label="Beyanlab – Consumables & Scales">
+              <option value="Steril-Spritze 1cc">Steril-Spritze 1cc</option>
+              <option value="Steril-Spritze 10cc">Steril-Spritze 10cc</option>
+              <option value="Skalpellklinge Nr. 12">Skalpellklinge Nr. 12</option>
+              <option value="Falcon-Röhrchen 50ml">Falcon-Röhrchen 50ml</option>
+              <option value="Falcon-Röhrchen 15ml steril">Falcon-Röhrchen 15ml steril</option>
+              <option value="Nitril-Einweghandschuhe Blau M">Nitril-Einweghandschuhe Blau M</option>
+              <option value="Latex-Einweghandschuhe L gepudert">Latex-Einweghandschuhe L gepudert</option>
+              <option value="Steril-OP-Handschuh Nr. 8.5">Steril-OP-Handschuh Nr. 8.5</option>
+              <option value="Reagenzglas-Kappe weiß 16mm">Reagenzglas-Kappe weiß 16mm</option>
+              <option value="Laborschutzbrille grün">Laborschutzbrille grün</option>
+              <option value="Stuart Transport-Abstrichtupfer">Stuart Transport-Abstrichtupfer</option>
+              <option value="Urin-Probenbehälter 100ml">Urin-Probenbehälter 100ml</option>
+              <option value="Sterilisations-Testpapier">Sterilisations-Testpapier</option>
+              <option value="FLY-500 Präzisionswaage">FLY-500 Präzisionswaage</option>
+              <option value="FLY-5000 Präzisionswaage">FLY-5000 Präzisionswaage</option>
+              <option value="JZC-TSC-30 Plattformwaage">JZC-TSC-30 Plattformwaage</option>
+              <option value="Digitales Rotationsviskosimeter">Digitales Rotationsviskosimeter</option>
+              <option value="Hyamin-1622-Lösung">Hyamin-1622-Lösung</option>
+              <option value="Silikon-Reparaturband">Silikon-Reparaturband</option>
+              <option value="O-Rotor für NDJ-8S">O-Rotor für NDJ-8S</option>
+            </optgroup>
+            <optgroup label="Biobase – Sterilization">
+              <option value="Biobase BKQ-B50 II">Biobase BKQ-B50 II</option>
+            </optgroup>
+            <optgroup label="Borox – Glassware & Filtration">
+              <option value="Filtre Kağıdı">Filtre Kağıdı</option>
+              <option value="Vakum Filtrasyon Set">Vakum Filtrasyon Set</option>
+              <option value="Büchner-Filtrationsset">Büchner-Filtrationsset</option>
+              <option value="Vakuumpumpen-Filtrationsset">Vakuumpumpen-Filtrationsset</option>
+              <option value="Membranfilter-Set">Membranfilter-Set</option>
+              <option value="Glas-Büchnertrichter">Glas-Büchnertrichter</option>
+              <option value="Korkstopfen-Set">Korkstopfen-Set</option>
+              <option value="Silikonstopfen-Set">Silikonstopfen-Set</option>
+              <option value="Spritzflasche (Hypochlorit)">Spritzflasche (Hypochlorit)</option>
+              <option value="Spritzflasche (IPA)">Spritzflasche (IPA)</option>
+            </optgroup>
+            <optgroup label="Kimyalab – Chemicals">
+              <option value="Zitronensäure-Monohydrat">Zitronensäure-Monohydrat</option>
+              <option value="Natriumnitrit">Natriumnitrit</option>
+              <option value="Stearinsäure">Stearinsäure</option>
+              <option value="Zinkoxid">Zinkoxid</option>
+              <option value="Natriummetabisulfit">Natriummetabisulfit</option>
+              <option value="Zinksulfat-Heptahydrat">Zinksulfat-Heptahydrat</option>
+              <option value="Lactose-Monohydrat">Lactose-Monohydrat</option>
+              <option value="Bariumchlorid">Bariumchlorid</option>
+              <option value="Zinkchlorid">Zinkchlorid</option>
+              <option value="Aluminiumsulfat">Aluminiumsulfat</option>
+              <option value="Eisen(II)-sulfat-Heptahydrat">Eisen(II)-sulfat-Heptahydrat</option>
+              <option value="Aktivkohle-Pulver">Aktivkohle-Pulver</option>
+              <option value="Natriumchlorid">Natriumchlorid</option>
+              <option value="Natriumhydrogencarbonat">Natriumhydrogencarbonat</option>
+              <option value="Calciumcarbonat">Calciumcarbonat</option>
+              <option value="Natriumhydroxid">Natriumhydroxid</option>
+              <option value="Kaliumsulfat">Kaliumsulfat</option>
+              <option value="Kaliumhydroxid">Kaliumhydroxid</option>
+              <option value="Kaliumcarbonat (Granulat)">Kaliumcarbonat (Granulat)</option>
+              <option value="Calciumchlorid">Calciumchlorid</option>
+              <option value="Magnesiumsulfat-Heptahydrat">Magnesiumsulfat-Heptahydrat</option>
+              <option value="Koffein, wasserfrei">Koffein, wasserfrei</option>
+              <option value="Salicylsäure">Salicylsäure</option>
+              <option value="Natriumperborat-Tetrahydrat">Natriumperborat-Tetrahydrat</option>
+              <option value="EDTA-4Na">EDTA-4Na</option>
+            </optgroup>
+            <optgroup label="Milwaukee – Water Analysis">
+              <option value="Milwaukee MW806 MAX">Milwaukee MW806 MAX</option>
+              <option value="Milwaukee MW600 PRO">Milwaukee MW600 PRO</option>
+              <option value="Milwaukee PH51">Milwaukee PH51</option>
+              <option value="Milwaukee MW180 MAX">Milwaukee MW180 MAX</option>
+              <option value="Milwaukee MW306 MAX">Milwaukee MW306 MAX</option>
+              <option value="Milwaukee MC510 PRO">Milwaukee MC510 PRO</option>
+              <option value="Milwaukee MC125 PRO">Milwaukee MC125 PRO</option>
+              <option value="Milwaukee MW151 MAX">Milwaukee MW151 MAX</option>
+              <option value="Milwaukee MW402 PRO">Milwaukee MW402 PRO</option>
+              <option value="Milwaukee MW801 / MW802 PRO">Milwaukee MW801 / MW802 PRO</option>
+              <option value="Milwaukee CD97">Milwaukee CD97</option>
+              <option value="Milwaukee MW150">Milwaukee MW150</option>
+              <option value="Milwaukee MW106">Milwaukee MW106</option>
+              <option value="Milwaukee MW804">Milwaukee MW804</option>
+              <option value="Milwaukee PH55">Milwaukee PH55</option>
+              <option value="Milwaukee MW301 PRO">Milwaukee MW301 PRO</option>
+              <option value="Milwaukee MW101">Milwaukee MW101</option>
+              <option value="Milwaukee EC60 PRO">Milwaukee EC60 PRO</option>
+              <option value="Milwaukee CD611">Milwaukee CD611</option>
+              <option value="Milwaukee C65 / C66">Milwaukee C65 / C66</option>
+              <option value="Milwaukee pH600">Milwaukee pH600</option>
+              <option value="Milwaukee MW102 PRO+">Milwaukee MW102 PRO+</option>
+              <option value="Milwaukee MW500 PRO">Milwaukee MW500 PRO</option>
+              <option value="Milwaukee TH310">Milwaukee TH310</option>
+              <option value="Milwaukee MA852">Milwaukee MA852</option>
+            </optgroup>
+            <optgroup label="Optika – Microscopes">
+              <option value="Optika B-292">Optika B-292</option>
+              <option value="Optika SZP-10e">Optika SZP-10e</option>
+              <option value="Optika B-190 Serie">Optika B-190 Serie</option>
+              <option value="Optika B-150 Serie">Optika B-150 Serie</option>
+              <option value="Optika B-60 Serie">Optika B-60 Serie</option>
+              <option value="Optika ECOVISION Serie">Optika ECOVISION Serie</option>
+              <option value="Optika B-380 Serie">Optika B-380 Serie</option>
+              <option value="Optika B-510 Serie">Optika B-510 Serie</option>
+              <option value="Optika B-810 / B-1000 Serie">Optika B-810 / B-1000 Serie</option>
+              <option value="Optika POL Serie">Optika POL Serie</option>
+              <option value="Optika FLUO Serie">Optika FLUO Serie</option>
+              <option value="Optika IM-300 Serie">Optika IM-300 Serie</option>
+              <option value="Optika IM-5 Serie">Optika IM-5 Serie</option>
+              <option value="Optika IM-7">Optika IM-7</option>
+              <option value="Optika MET Serie">Optika MET Serie</option>
+              <option value="Optika SZ Serie">Optika SZ Serie</option>
+              <option value="Optika SLX Serie">Optika SLX Serie</option>
+              <option value="Optika SZR-180">Optika SZR-180</option>
+              <option value="Optika OPTIGEM-10/20">Optika OPTIGEM-10/20</option>
+              <option value="Optika SZP-6 / 8 / 10">Optika SZP-6 / 8 / 10</option>
+              <option value="Optika ST-155 / ST-156">Optika ST-155 / ST-156</option>
+            </optgroup>
+            <optgroup label="Radwag – Balances">
+              <option value="Radwag MA 50.R">Radwag MA 50.R</option>
+              <option value="Radwag AS 220 R.2 Plus">Radwag AS 220 R.2 Plus</option>
+              <option value="Radwag WTC 2000">Radwag WTC 2000</option>
+            </optgroup>
+            <optgroup label="Thermomac – Ovens & Stirrers">
+              <option value="Thermomac FDO Trockenschrank">Thermomac FDO Trockenschrank</option>
+              <option value="Thermomac VO91 / VO52">Thermomac VO91 / VO52</option>
+              <option value="Thermomac ICT210">Thermomac ICT210</option>
+              <option value="Thermomac SDO65 / SDO45">Thermomac SDO65 / SDO45</option>
+              <option value="Thermomac DO65 / DO45">Thermomac DO65 / DO45</option>
+              <option value="Thermomac WB22 / WB6 / WB15">Thermomac WB22 / WB6 / WB15</option>
+              <option value="Thermomac TM12">Thermomac TM12</option>
+              <option value="Thermomac TM19D">Thermomac TM19D</option>
+              <option value="Thermomac TM14D">Thermomac TM14D</option>
+              <option value="Thermomac TM18D">Thermomac TM18D</option>
+              <option value="Thermomac HMS002">Thermomac HMS002</option>
+              <option value="Thermomac HMS650">Thermomac HMS650</option>
+              <option value="Thermomac TM-II-7C">Thermomac TM-II-7C</option>
+              <option value="Thermomac HM250 / HM500 / HM425x">Thermomac HM250 / HM500 / HM425x</option>
+              <option value="Thermomac TMP20">Thermomac TMP20</option>
+              <option value="Thermomac DT206D / DT201">Thermomac DT206D / DT201</option>
+              <option value="Thermomac VP91">Thermomac VP91</option>
+            </optgroup>
+            </select>
             <button type="button" class="form-product-clear-btn" id="formProductClear" hidden aria-label="Löschen">&times;</button>
           </div>
           <span class="form-product-hint" id="formProductHint" hidden data-i18n="form.selectedProduct">✓ Gerät automatisch ausgewählt</span>

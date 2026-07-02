@@ -3724,3 +3724,14 @@ html[dir="rtl"] .checkout-close { right: auto; left: 18px; }
   margin-top: 5px;
   font-weight: 600;
 }
+
+/* Select in product field – uses existing .form-group select style */
+.form-product-field-wrap select {
+  width: 100%;
+  padding-right: 44px !important;
+}
+.form-product-group.is-auto-filled select {
+  border-color: var(--success) !important;
+  background-color: rgba(var(--success-rgb), 0.06) !important;
+  box-shadow: 0 0 0 3px rgba(var(--success-rgb), 0.15) !important;
+}

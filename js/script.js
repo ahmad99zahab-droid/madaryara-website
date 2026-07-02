@@ -803,7 +803,20 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
 
   function setAutoFilled(name) {
     if (!input || !group) return;
-    input.value = name;
+    // For <select>: find matching option and select it
+    if (input.tagName === 'SELECT') {
+      const opts = Array.from(input.options);
+      const match = opts.find(o => o.value === name || o.text === name);
+      if (match) { input.value = match.value; }
+      else {
+        // Add a temporary option at top if no exact match
+        const tmp = new Option(name, name, true, true);
+        tmp.dataset.tmp = '1';
+        input.prepend(tmp);
+      }
+    } else {
+      input.value = name;
+    }
     group.classList.add('is-auto-filled');
     if (clearBtn) clearBtn.hidden = false;
     if (hint) hint.hidden = false;
@@ -811,7 +824,14 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
 
   function clearAutoFilled() {
     if (!input || !group) return;
-    input.value = '';
+    // Remove any temporary option added
+    if (input.tagName === 'SELECT') {
+      const tmp = input.querySelector('[data-tmp]');
+      if (tmp) tmp.remove();
+      input.value = '';
+    } else {
+      input.value = '';
+    }
     group.classList.remove('is-auto-filled');
     if (clearBtn) clearBtn.hidden = true;
     if (hint) hint.hidden = true;
@@ -829,9 +849,11 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
     applyStoredProduct();
     document.addEventListener('i18n:change', applyStoredProduct);
 
-    // Remove green state when user manually edits
-    input.addEventListener('input', function () {
-      if (group.classList.contains('is-auto-filled')) {
+    // Remove green state when user manually chooses a different option
+    input.addEventListener('change', function () {
+      if (!input.value) {
+        clearAutoFilled();
+      } else if (group.classList.contains('is-auto-filled')) {
         group.classList.remove('is-auto-filled');
         if (clearBtn) clearBtn.hidden = true;
         if (hint) hint.hidden = true;
