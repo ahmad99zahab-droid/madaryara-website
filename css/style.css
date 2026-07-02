@@ -3686,3 +3686,41 @@ html[dir="rtl"] .checkout-close { right: auto; left: 18px; }
   box-shadow: 0 0 0 4px rgba(var(--success-rgb), 0.18);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+/* ── PRODUCT FIELD (single combined field) ── */
+.form-product-field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.form-product-field-wrap input {
+  padding-right: 36px !important;
+}
+.form-product-clear-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.form-product-clear-btn:hover { color: var(--danger); background: rgba(var(--danger-rgb),0.1); }
+
+/* Green state when auto-filled */
+.form-product-group.is-auto-filled label { color: var(--success); }
+.form-product-group.is-auto-filled .form-product-field-wrap input {
+  border-color: var(--success) !important;
+  background: rgba(var(--success-rgb), 0.06) !important;
+  box-shadow: 0 0 0 3px rgba(var(--success-rgb), 0.15) !important;
+}
+.form-product-hint {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--success);
+  margin-top: 5px;
+  font-weight: 600;
+}

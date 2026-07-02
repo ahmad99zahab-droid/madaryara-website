@@ -2321,21 +2321,15 @@
           <label data-i18n="form.email">E-Mail</label>
           <input type="email" name="email" placeholder="ihre@email.com" data-i18n-placeholder="form.emailPlaceholder" />
         </div>
-        <!-- Pre-selected product banner (shown when navigating from a device's Contact us) -->
-        <div class="form-product-banner" id="formProductBanner" hidden>
-          <span class="form-product-banner-icon">🔬</span>
-          <div>
-            <span class="form-product-banner-label" data-i18n="form.selectedProduct">Ausgewähltes Gerät:</span>
-            <strong class="form-product-banner-name" id="formProductName"></strong>
+        <div class="form-group form-product-group" id="formProductGroup">
+          <label data-i18n="form.product">🔬 Gerät / Produkt</label>
+          <div class="form-product-field-wrap">
+            <input type="text" name="product" id="formProductInput"
+                   placeholder="z. B. Atago PAL-3, Milwaukee MW806…"
+                   data-i18n-placeholder="form.productPlaceholder" />
+            <button type="button" class="form-product-clear-btn" id="formProductClear" hidden aria-label="Löschen">&times;</button>
           </div>
-          <button type="button" class="form-product-banner-clear" id="formProductClear" aria-label="Remove">&times;</button>
-        </div>
-
-        <div class="form-group">
-          <label data-i18n="form.product">Gerät / Produkt</label>
-          <input type="text" name="product" id="formProductInput"
-                 placeholder="z. B. Atago PAL-3, Milwaukee MW806…"
-                 data-i18n-placeholder="form.productPlaceholder" />
+          <span class="form-product-hint" id="formProductHint" hidden data-i18n="form.selectedProduct">✓ Gerät automatisch ausgewählt</span>
         </div>
         <div class="form-group">
           <label data-i18n="form.message">Ihre Nachricht</label>

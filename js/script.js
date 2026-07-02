@@ -795,50 +795,57 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
     // Let the link navigate normally (#kontakt or index.html#kontakt)
   });
 
-  // ── B) On page load, check for stored product and fill the form ──
-  const banner   = document.getElementById('formProductBanner');
-  const bannerName = document.getElementById('formProductName');
-  const clearBtn = document.getElementById('formProductClear');
+  // ── B) On page load, check for stored product and fill the single product field ──
+  const group    = document.getElementById('formProductGroup');
   const input    = document.getElementById('formProductInput');
+  const clearBtn = document.getElementById('formProductClear');
+  const hint     = document.getElementById('formProductHint');
 
-  function applyStoredProduct() {
-    const stored = sessionStorage.getItem(STORAGE_KEY);
-    if (!stored || !banner || !input) return;
+  function setAutoFilled(name) {
+    if (!input || !group) return;
+    input.value = name;
+    group.classList.add('is-auto-filled');
+    if (clearBtn) clearBtn.hidden = false;
+    if (hint) hint.hidden = false;
+  }
 
-    // Show banner
-    bannerName.textContent = stored;
-    banner.hidden = false;
-
-    // Pre-fill text input
-    input.value = stored;
-
-    // Highlight the field briefly
-    input.classList.add('pre-filled');
-    setTimeout(() => input.classList.remove('pre-filled'), 2000);
-
-    // Clear from sessionStorage (single-use)
+  function clearAutoFilled() {
+    if (!input || !group) return;
+    input.value = '';
+    group.classList.remove('is-auto-filled');
+    if (clearBtn) clearBtn.hidden = true;
+    if (hint) hint.hidden = true;
     sessionStorage.removeItem(STORAGE_KEY);
   }
 
-  // Run on load and after language switch (i18n re-renders the form)
-  if (banner) {
+  function applyStoredProduct() {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (!stored || !input) return;
+    setAutoFilled(stored);
+    sessionStorage.removeItem(STORAGE_KEY);
+  }
+
+  if (input) {
     applyStoredProduct();
     document.addEventListener('i18n:change', applyStoredProduct);
+
+    // Remove green state when user manually edits
+    input.addEventListener('input', function () {
+      if (group.classList.contains('is-auto-filled')) {
+        group.classList.remove('is-auto-filled');
+        if (clearBtn) clearBtn.hidden = true;
+        if (hint) hint.hidden = true;
+      }
+    });
   }
 
   // When navigating via hash (#kontakt) from a device CTA on the same page
   window.addEventListener('hashchange', function () {
-    if (window.location.hash === '#kontakt') {
-      setTimeout(applyStoredProduct, 150);
-    }
+    if (window.location.hash === '#kontakt') setTimeout(applyStoredProduct, 150);
   });
 
-  // Clear button removes the pre-selection
+  // × button clears the field
   if (clearBtn) {
-    clearBtn.addEventListener('click', function () {
-      banner.hidden = true;
-      input.value = '';
-      sessionStorage.removeItem(STORAGE_KEY);
-    });
+    clearBtn.addEventListener('click', clearAutoFilled);
   }
 })();
