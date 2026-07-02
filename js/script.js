@@ -754,3 +754,91 @@ document.querySelectorAll('.scroll-wrap').forEach(wrap => {
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) close(); });
 })();
+
+// ── PRODUCT PRE-SELECTION FOR CONTACT FORM ───────────────────────────────────
+(function () {
+  const STORAGE_KEY = 'madaryara-inquiry-product';
+
+  // ── A) Intercept "Contact us" clicks on device cards ──
+  document.addEventListener('click', function (e) {
+    const contactBtn = e.target.closest('.btn-contact-card, .details-cta');
+    if (!contactBtn) return;
+
+    // Find the product name from the nearest card context
+    let productName = '';
+
+    // From mini-item-card (brand pages)
+    const miniCard = contactBtn.closest('.mini-item-card');
+    if (miniCard) {
+      const nameSpan = miniCard.querySelector('span');
+      productName = nameSpan ? nameSpan.textContent.trim() : (miniCard.dataset.product || '');
+    }
+
+    // From catalog-card (homepage)
+    const catalogCard = contactBtn.closest('.catalog-card');
+    if (catalogCard) {
+      const h3 = catalogCard.querySelector('h3');
+      productName = h3 ? h3.textContent.trim() : '';
+    }
+
+    // From details modal (details-cta button)
+    if (!productName) {
+      const nameEl = document.getElementById('detailsName');
+      if (nameEl && nameEl.textContent.trim()) {
+        productName = nameEl.textContent.trim();
+      }
+    }
+
+    if (productName) {
+      sessionStorage.setItem(STORAGE_KEY, productName);
+    }
+    // Let the link navigate normally (#kontakt or index.html#kontakt)
+  });
+
+  // ── B) On page load, check for stored product and fill the form ──
+  const banner   = document.getElementById('formProductBanner');
+  const bannerName = document.getElementById('formProductName');
+  const clearBtn = document.getElementById('formProductClear');
+  const input    = document.getElementById('formProductInput');
+
+  function applyStoredProduct() {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (!stored || !banner || !input) return;
+
+    // Show banner
+    bannerName.textContent = stored;
+    banner.hidden = false;
+
+    // Pre-fill text input
+    input.value = stored;
+
+    // Highlight the field briefly
+    input.classList.add('pre-filled');
+    setTimeout(() => input.classList.remove('pre-filled'), 2000);
+
+    // Clear from sessionStorage (single-use)
+    sessionStorage.removeItem(STORAGE_KEY);
+  }
+
+  // Run on load and after language switch (i18n re-renders the form)
+  if (banner) {
+    applyStoredProduct();
+    document.addEventListener('i18n:change', applyStoredProduct);
+  }
+
+  // When navigating via hash (#kontakt) from a device CTA on the same page
+  window.addEventListener('hashchange', function () {
+    if (window.location.hash === '#kontakt') {
+      setTimeout(applyStoredProduct, 150);
+    }
+  });
+
+  // Clear button removes the pre-selection
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      banner.hidden = true;
+      input.value = '';
+      sessionStorage.removeItem(STORAGE_KEY);
+    });
+  }
+})();
