@@ -3434,3 +3434,30 @@ html[dir="rtl"] .checkout-close { right: auto; left: 18px; }
   0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 1; }
   50%      { transform: translate(-50%,-50%) scale(1.5); opacity: 0.6; }
 }
+
+/* ── CONTACT US BUTTON (replaces price on cards) ── */
+.btn-contact-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 9px 14px;
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid rgba(var(--accent-rgb), 0.55);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+.btn-contact-card:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+/* Remove old 3D flip rules that are no longer needed */
+.card-inner, .card-front, .card-back { display: contents; }
